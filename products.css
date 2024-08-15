@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #076610;
+    color: white;
+    padding: 3em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 1em 0 0 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+
+section {
+    padding: 2em;
+    text-align: center;
+}
+
+.product-list, .service-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product, .service {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    max-width: 300px;
+}
+
+.product img, .service img {
+    width: 100%;
+    height: auto;
+}

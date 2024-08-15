@@ -1,0 +1,163 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#intro-video {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#intro-video video {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.hidden {
+  display: none;
+}
+
+#main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+body.home-background {
+  background-image: url('Pool Table Wallpaper Billiard Tables.jpg'); /* Replace with your background image path */
+  background-size: cover; /* Adjust as needed */
+  background-attachment: fixed; /* Keeps the background image fixed */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating of the background image */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* to prevent scrolling, you can use hidden*/
+  }
+  
+  header {
+    background: rgba(51, 51, 51, 0.8); /* Adjust as needed to contrast with the background image */
+    background-color: #076610;
+    color: white;
+    padding: 2em;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 2em;
+    text-align: center;
+  }
+
+  .photo-gallery {
+    /* Style your photo gallery here */
+}
+
+main {
+  padding: 2em;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 1em; /* Add space between video and paragraph */
+}
+.content video {
+  max-width: 50%; /* Adjust width as needed */
+}
+.content p {
+  max-width: 50%; /* Adjust width as needed */
+}
+
+.show-more-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.show-more-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.show-more-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+  
+  .cta-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .product {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  body {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
