@@ -1,98 +1,155 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #076610;
-    color: white;
-    padding: 2.5em;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin: 0 10px;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  section {
-    padding: 2em;
-    text-align: center;
-  }
-  
-  #contact ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  #contact ul li {
-    margin: 10px 0;
-  }
-  
-  #contact a {
-    color: #4CAF50;
-    text-decoration: none;
-  }
-  
-  #contact form {
-    margin-top: 20px;
-  }
-  
-  #contact label {
-    display: block;
-    margin-top: 10px;
-  }
-  
-  #contact input, #contact textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  #contact button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  body {
-    line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
-    max-width: 1170px;
-    margin: auto;
+  max-width: 1170px;
+  margin: auto;
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
-ul{
-	list-style: none;
+
+ul {
+  list-style: none;
+}
+
+/* Header Styling */
+header {
+  background-color: #076610;
+  color: white;
+  padding: 2.5em;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Section Styling */
+section {
+  padding: 2em;
+  text-align: center;
+}
+
+/* Contact Section Styling */
+#contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+#contact ul li {
+  margin: 10px 0;
+}
+
+#contact a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+#contact form {
+  margin-top: 20px;
+}
+
+#contact label {
+  display: block;
+  margin-top: 10px;
+}
+
+#contact input, #contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#contact button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+      padding: 2em;
+      font-size: 1.2em;
+  }
+
+  nav ul {
+      text-align: center;
+  }
+
+  nav ul li {
+      display: block;
+      margin: 10px 0; /* Stack nav items vertically on smaller screens */
+  }
+
+  section {
+      padding: 1.5em;
+  }
+
+  .container {
+      max-width: 100%; /* Ensure the container takes full width on smaller devices */
+  }
+
+  #contact input, #contact textarea {
+      padding: 8px; /* Slightly reduce padding on smaller screens */
+  }
+
+  #contact button {
+      padding: 8px 15px; /* Adjust button size for smaller devices */
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+      padding: 1.5em;
+      font-size: 1em;
+  }
+
+  nav ul li {
+      margin: 5px 0; /* Reduce spacing on mobile */
+  }
+
+  section {
+      padding: 1em;
+  }
+
+  #contact input, #contact textarea {
+      padding: 6px;
+  }
+
+  #contact button {
+      padding: 6px 12px;
+  }
 }
   
