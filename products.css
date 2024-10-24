@@ -4,6 +4,7 @@ body {
     padding: 0;
 }
 
+/* Header Styling */
 header {
     background-color: #076610;
     color: white;
@@ -11,6 +12,7 @@ header {
     text-align: center;
 }
 
+/* Navigation Styling */
 nav ul {
     list-style: none;
     padding: 0;
@@ -31,11 +33,13 @@ nav ul li a {
     border-radius: 5px;
 }
 
+/* Section Styling */
 section {
     padding: 2em;
     text-align: center;
 }
 
+/* Product and Service List Styling */
 .product-list, .service-list {
     display: flex;
     justify-content: center;
@@ -52,4 +56,55 @@ section {
 .product img, .service img {
     width: 100%;
     height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .product-list, .service-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product, .service {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1.5em;
+    }
+
+    nav ul {
+        margin: 1em 0;
+    }
+
+    .product-list, .service-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product, .service {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 0.5em;
+        font-size: 0.9em;
+    }
 }
