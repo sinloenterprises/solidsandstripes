@@ -39,51 +39,51 @@ body, html {
 
 body.home-background {
   background-image: url('Pool Table Wallpaper Billiard Tables.jpg'); /* Replace with your background image path */
-  background-size: cover; /* Adjust as needed */
-  background-attachment: fixed; /* Keeps the background image fixed */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Prevent repeating of the background image */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow: auto; /* to prevent scrolling, you can use hidden*/
-  }
-  
-  header {
-    background: rgba(51, 51, 51, 0.8); /* Adjust as needed to contrast with the background image */
-    background-color: #076610;
-    color: white;
-    padding: 2em;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin: 0 10px;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  section {
-    padding: 2em;
-    text-align: center;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
 
-  .photo-gallery {
-    /* Style your photo gallery here */
+header {
+  background: rgba(51, 51, 51, 0.8);
+  background-color: #076610;
+  color: white;
+  padding: 2em;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+section {
+  padding: 2em;
+  text-align: center;
+}
+
+.photo-gallery {
+  /* Style your photo gallery here */
 }
 
 main {
@@ -93,71 +93,135 @@ main {
 .content {
   display: flex;
   align-items: center;
-  gap: 1em; /* Add space between video and paragraph */
+  gap: 1em;
 }
+
 .content video {
-  max-width: 50%; /* Adjust width as needed */
+  max-width: 50%;
 }
+
 .content p {
-  max-width: 50%; /* Adjust width as needed */
+  max-width: 50%;
 }
 
 .show-more-container {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .show-more-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: green;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .show-more-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
-  
-  .cta-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .product {
-    border: 1px solid #ddd;
-    margin: 10px;
-    padding: 10px;
-  }
-  
-  body {
-    line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
+
+.cta-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.product {
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 10px;
+}
+
+body {
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
-    max-width: 1170px;
-    margin: auto;
+  max-width: 1170px;
+  margin: auto;
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
-ul{
-	list-style: none;
+
+ul {
+  list-style: none;
+}
+
+/* New Responsive Design */
+@media (max-width: 768px) {
+  #main-content {
+    flex-direction: column;
+    height: auto;
+    padding: 1em;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .content video, .content p {
+    max-width: 100%;
+  }
+
+  header {
+    padding: 1em;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .show-more-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .cta-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    font-size: 1.2em;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  .show-more-button, .cta-button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .product {
+    margin: 5px;
+    padding: 5px;
+  }
+
+  section {
+    padding: 1em;
+  }
 }
