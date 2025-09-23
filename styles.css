@@ -3,8 +3,44 @@ body, html {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Professional fade-in animation for page elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Professional slide-in animation */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Professional scale animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 #intro-video {
@@ -17,6 +53,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
 }
 
 #intro-video video {
@@ -35,6 +72,15 @@ body, html {
   align-items: center;
   height: 100vh;
   text-align: center;
+}
+
+/* Hide all main content during intro video */
+body.intro-playing main,
+body.intro-playing .photo-gallery,
+body.intro-playing section:not(#intro-video),
+body.intro-playing div:not(#intro-video):not(#intro-video *),
+body.intro-playing br {
+  display: none !important;
 }
 
 body.home-background {
@@ -75,11 +121,45 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 15px 20px;
+  display: block;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+  width: 80%;
 }
 
 section {
   padding: 2em;
   text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+  transition: all 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
 }
 
 .photo-gallery {
@@ -111,33 +191,73 @@ main {
 
 .show-more-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 16px;
   color: #fff;
-  background-color: green;
+  background: linear-gradient(45deg, #28a745, #20c997);
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   text-decoration: none;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.show-more-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.show-more-button:hover::before {
+  left: 100%;
 }
 
 .show-more-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
+  background: linear-gradient(45deg, #20c997, #28a745);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
 }
 
 .cta-button {
-  background-color: #4CAF50;
+  background: linear-gradient(45deg, #4CAF50, #45a049);
   color: white;
-  padding: 10px 20px;
+  padding: 12px 24px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  background: linear-gradient(45deg, #45a049, #4CAF50);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
 }
 
 .product {
   border: 1px solid #ddd;
-  margin: 10px;
-  padding: 10px;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: scaleIn 0.6s ease-out;
+}
+
+.product:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-color: #28a745;
 }
 
 body {
@@ -225,3 +345,9 @@ ul {
     padding: 1em;
   }
 }
+
+  section {
+    padding: 1em;
+  }
+}
+
