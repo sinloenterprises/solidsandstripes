@@ -5,10 +5,11 @@
   <link rel="shortcut icon" type="x-icon" href="Webiste Logo Icon 2.jpeg">
   <meta name="google-site-verification" content="1jVYBgQEODEbBRdY3q_tmnHpPGkFayhRKxjXm-eOjAA" />
   <link rel="canonical" href="https://solidsandstripespooltable.com/"/>
-  <title>Solids and Stripes</title>
+  <title>Solids and Stripes Pool Table Services</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="footer.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <script type="module" src="firebaseauth.js"></script>
   <style>
     .welcome-message {
         font-family: 'Helvetica', 'Arial', sans-serif;
@@ -20,9 +21,8 @@
         margin-top: 20px;
     }
 </style>
-
 </head>
-<body>
+<body class="intro-playing">
   <header>
     <div id="intro-video">
       <video autoplay muted id="video-element">
@@ -35,11 +35,15 @@
   <body class="home-background">
 
     <div>
-    <img src="Greenlogo.jpeg" alt="Solids and Stripes Logo" align="left" width="200" height="200">
-    <h1 style="font-family:'Times New Roman', Times, serif; font-size: 60px; ">SOLIDS AND STRIPES</h1>
+    <img src="Greenlogo.jpeg" alt="Solids and Stripes Logo" align="left" width="175" height="175">
+    <h1 style="font-family:'Times New Roman', Times, serif; font-size: 40px; ">SOLIDS AND STRIPES POOL TABLE SERVICES</h1>
     <h1>by Sinlo Enterprises</h1>
     <br>
     <h2 style="color: lightgreen;">Bringing the Finest Pool Tables to Your Place</h2>
+    <div id="login-area" class="show-more-container" style="position: absolute; top: 20px; right: 20px; display: none;">
+      <br><span id="user-greeting" style="color: white; margin-right: 15px; display: none;"><b>Welcome, <span id="user-name"></span>!</b></span>
+      <br><button id="logout-btn" style="color: white; background: none; border: none; cursor: pointer; margin-right: 15px; text-decoration: underline; display: none;"><b>Logout</b></button>
+    </div>    
 </header>
 <nav id="nav-bar" style="position: relative; width: 100%; background-color: green; top: 0; z-index: 1000;">
   <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: space-around;">
@@ -65,14 +69,27 @@
   const introVideo = document.getElementById('intro-video');
   const navBar = document.getElementById('nav-bar');
   const headerHeight = document.querySelector('header').offsetHeight;
+  const loginArea = document.getElementById('login-area');
 
   // Initially hide the navigation bar until the intro video ends
   navBar.style.display = 'none';
+  
+  // Hide main content initially by keeping intro-playing class
+  document.body.style.overflow = 'hidden';
 
   // Simulate the intro video ending
   setTimeout(() => {
-    introVideo.style.display = 'none'; // Hide the intro video
-    navBar.style.display = 'block';   // Show the navigation bar
+    // Remove intro-playing class to show main content
+    document.body.classList.remove('intro-playing');
+    
+    // Hide intro video and show navigation
+    introVideo.style.display = 'none';
+    navBar.style.display = 'block';
+    loginArea.style.display = 'block';
+    
+    // Enable scrolling
+    document.body.style.overflow = 'auto';
+    document.body.classList.add('home-background');
   }, 5000); // Adjust timing to match your video duration
 
   // Make navigation sticky after scrolling past the header
@@ -80,43 +97,58 @@
     if (window.scrollY >= headerHeight) {
       navBar.style.position = 'fixed';
       navBar.style.top = '0';
+      navBar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
     } else {
       navBar.style.position = 'relative';
       navBar.style.top = 'auto';
+      navBar.style.boxShadow = 'none';
     }
   });
+  
+  // Add smooth scroll behavior for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
 </script>
-
   <main>
   <section>
   <div class="content">
-  <iframe width="700" height="315" src="https://www.youtube.com/embed/39rQEWJzxak?si=Q-AreOjOt-CblZSa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="700" height="315" src="https://www.youtube.com/embed/39rQEWJzxak?si=Q-AreOjOt-CblZSa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></iframe>
 <div class="welcome-message" style="color: white;">
   WELCOME TO SOLIDS AND STRIPES POOL TABLE SERVICES <br> SRI LANKA'S BEST POOL TABLE SERVICE WITH OVER 10,000 SUCCESSFUL INSTALLATIONS.<br>JOIN OUR COMMUNITY OF SATISFIED CUSTOMERS AND ELEVATE YOUR GAME WITH THE BEST OPTIONS TO BUY POOL TABLE SRI LANKA HAS TO OFFER.
-  </div>
+</div>
   </div>
   </section>
   </main>
 <br>
 
-<div style="background: rgba(0, 0, 0, 0.8); padding: 20px; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); border: 2px solid #ffffff;">
+<div style="background: rgba(0, 0, 0, 0.8); padding: 20px; border-radius: 15px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); border: 2px solid #ffffff; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
   <section style="margin-bottom: 30px;">
       <h2 style="font-size: 2.5em; margin-bottom: 20px; color: white;">Join Our Community!</h2>
       <p style="font-size: 1.5em; margin-bottom: 30px; color: white;">Explore our collection of expertly crafted pool tables by subscribing to our YouTube channel.</p>
-      <a href="https://www.youtube.com/channel/UCx1J0LvQCdvPQYxIuVmJCXQ" style="font-size: 1.2em; color: #fff; background-color: #ff0000; padding: 15px 30px; border-radius: 50px; text-transform: uppercase; text-decoration: none; transition: background-color 0.3s;" target="_blank"><b>Subscribe Now!</b>
+      <a href="https://www.youtube.com/channel/UCx1J0LvQCdvPQYxIuVmJCXQ" style="font-size: 1.2em; color: #fff; background: linear-gradient(45deg, #ff0000, #cc0000); padding: 15px 30px; border-radius: 50px; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);" target="_blank" onmouseover="this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(255, 0, 0, 0.4)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 15px rgba(255, 0, 0, 0.3)'"><b>Subscribe Now!</b>
         <i class="fab fa-youtube" style="margin-right: 10px;"></i>
       </a>
   </section>
 </div>
 <br>
 <br>
-  <img src="Image 1.jpg" alt="Image 1" width="440" height="340">
-  <img src="Image 10.jpeg" alt="Image 2" width="440" height="340">
-  <img src="Image 3.jpg" alt="Image 3" width="440" height="340">\
+  <img src="Image 1.jpg" alt="Image 1" width="420" height="340" style="border-radius: 15px; margin: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05) translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.4)'" onmouseout="this.style.transform='scale(1) translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.3)'">
+  <img src="Image 10.jpeg" alt="Image 2" width="420" height="340" style="border-radius: 15px; margin: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05) translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.4)'" onmouseout="this.style.transform='scale(1) translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.3)'">
+  <img src="Image 3.jpg" alt="Image 3" width="420" height="340" style="border-radius: 15px; margin: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05) translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.4)'" onmouseout="this.style.transform='scale(1) translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.3)'">
   <div class="photo-gallery">
     <!-- Your photo gallery content here -->
     <div class="show-more-container">
-    <a href="gallery.html" class="show-more-button">Explore our gallery</a>
+      <a href="gallery.html" class="show-more-button">Explore our gallery</a>
     </div>
 
   <section id="products">
@@ -147,10 +179,10 @@
       -1px -1px 0 #000,  
        1px -1px 0 #000, 
       -1px  1px 0 #000,  
-       1px  1px 0 #000;">Essential Accessories for Enhancing Your Pool Game.</p>
+       1px  1px 0 #000;">Essential Accessories for Enhancing Your Pool Game</p>
     </div>
 <div class="show-more-container">
-  <a href="products.html" class="show-more-button">More products</a>
+  <a href="products.html" class="show-more-button"><b>More products</b></a>
 </div>
   </section>
 
@@ -185,18 +217,19 @@
     }
 </style>
 
-<div style="background: rgba(255, 125, 125, 0.9); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 6px 10px rgba(0, 0, 0, 0.15); border: 2px solid #ffffff; position: relative; overflow: hidden; text-align: center;">
+<div style="background: rgba(255, 125, 125, 0.9); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 6px 10px rgba(0, 0, 0, 0.15); border: 2px solid #ffffff; position: relative; overflow: hidden; text-align: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
   <!-- Small decorative icons -->
-  <img src="Game Mode.jpg" alt="Cue Stick" style="width: 300px; position: absolute; top: 10px; left: 20px; opacity: 0.5;">
-  <img src="Pool Balls (Game Mode).jpg" alt="Pool Ball" style="width: 300px; position: absolute; bottom: 10px; right: 20px; opacity: 0.6;">
+  <img src="Game Mode.jpg" alt="Cue Stick" style="width: 300px; position: absolute; top: 10px; left: 20px; opacity: 0.5; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='0.5'">
+  <img src="Pool Balls (Game Mode).jpg" alt="Pool Ball" style="width: 300px; position: absolute; bottom: 10px; right: 20px; opacity: 0.6; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='0.6'">
 
   <section style="margin-bottom: 20px;">
     <p style="font-size: 1.8em; font-weight: bold; margin-bottom: 25px; color: rgb(32, 32, 32); line-height: 1.5; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
       Discover the secrets to mastering pool! <br> Learn step-by-step with our <br> 
-      <a href="howtoplay.html" style="color: rgb(51, 51, 51); text-decoration: none; font-weight: bold; padding: 10px 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); transition: background-color 0.3s, transform 0.3s;">How to Play</a> guide.
+      <a href="howtoplay.html" style="color: rgb(51, 51, 51); text-decoration: none; font-weight: bold; padding: 12px 24px; border-radius: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.4)'" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 4px 15px rgba(0, 0, 0, 0.3)'">How to Play</a> guide.
     </p>
   </section>
 </div>
+
 
   <footer class="footer">
     <div class="container">
@@ -240,9 +273,13 @@
             <br>
             <br>
             <a href="https://t.me/gehs636" target="_blank"><i class="fab fa-telegram"> Telegram Channel</i></a>
+            <br>
+            <br>
+            <a href="https://linkedin.com/company/solids-and-stripes-pool-table-services" target="_blank"><i class="fab fa-linkedin"> Linkedin</i></a>
           </ul>
         </div>
 
+        
       <div class="footer-col">
         <h4>Logos</h4>
         <div class="social-links">
@@ -258,7 +295,81 @@
       </div>
     </footer>
   </div>
+  <script>
+    // User session management
+    document.addEventListener('DOMContentLoaded', function() {
+      checkUserSession();
+    });
+
+    async function checkUserSession() {
+      const loggedInUserId = localStorage.getItem('loggedInUserId');
+      
+      if (loggedInUserId) {
+        try {
+          // Import Firebase modules
+          const { initializeApp } = await import("https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js");
+          const { getFirestore, doc, getDoc } = await import("https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js");
+          
+          // Firebase configuration
+          const firebaseConfig = {
+            apiKey: "AIzaSyC39UGkNhkYaRIOWCP6FBU7kHxs28OX_kY",
+            authDomain: "solids-and-stripes.firebaseapp.com",
+            projectId: "solids-and-stripes",
+            storageBucket: "solids-and-stripes.firebasestorage.app",
+            messagingSenderId: "915996630319",
+            appId: "1:915996630319:web:e4f104cd83861d9d77d5da"
+          };
+          
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+          const db = getFirestore();
+          
+          // Get user data from Firestore
+          const userDoc = await getDoc(doc(db, "users", loggedInUserId));
+          
+          if (userDoc.exists()) {
+            const userData = userDoc.data();
+            const firstName = userData.firstName || userData.displayName?.split(' ')[0] || 'User';
+            
+            // Update UI to show user name
+            document.getElementById('user-name').textContent = firstName;
+            document.getElementById('user-greeting').style.display = 'inline';
+            document.getElementById('login-link').style.display = 'none';
+            document.getElementById('logout-btn').style.display = 'inline';
+          } else {
+            // User document doesn't exist, clear session
+            localStorage.removeItem('loggedInUserId');
+          }
+        } catch (error) {
+          console.error('Error fetching user data:', error);
+          // If there's an error, clear the session
+          localStorage.removeItem('loggedInUserId');
+        }
+      }
+    }
+
+    // Logout functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const logoutBtn = document.getElementById('logout-btn');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', function() {
+          // Clear user session
+          localStorage.removeItem('loggedInUserId');
+          
+          // Update UI
+          document.getElementById('user-greeting').style.display = 'none';
+          document.getElementById('login-link').style.display = 'inline';
+          document.getElementById('logout-btn').style.display = 'none';
+          
+          // Optional: Show logout message
+          alert('You have been logged out successfully!');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
+
+
 
 
