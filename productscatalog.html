@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="canonical" href="https://solidsandstripespooltable.com/productscatalog.html" />
+  <link rel="shortcut icon" type="x-icon" href="Webiste Logo Icon 2.jpeg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalog - Solids and Stripes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+    header {
+      background-color: #076610;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .catalog-container {
+      padding: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 220px;
+      text-align: center;
+      padding-bottom: 15px;
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 10px;
+    }
+    .quantity-input {
+      margin: 5px auto;
+      padding: 8px;
+      width: 80%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .add-cart-btn {
+      background-color: #076610;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+    #cartSidebar {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 350px;
+      height: 100%;
+      background: white;
+      box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      transition: right 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    #cartSidebar.active {
+      right: 0;
+    }
+    #cartSidebar h2 {
+      margin-top: 0;
+      color: #076610;
+    }
+    .cart-item {
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    .cart-item button {
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 2px 6px;
+      cursor: pointer;
+    }
+    .view-cart-btn, .proceed-btn, .send-btn {
+      background: green;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: block;
+      margin: 20px auto;
+    }
+    .customer-form {
+      display: none;
+      text-align: center;
+      margin: 20px auto;
+      max-width: 500px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .customer-form input, .customer-form textarea {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 2000;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+    }
+    .modal h3 {
+      margin-top: 0;
+    }
+  </style>
+  <!-- Load Google reCAPTCHA v2 -->
+  <!-- Replace YOUR_SITE_KEY with your actual site key -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+<header><b>Solids and Stripes Catalog</b></header>
+
+<h1>Pool Tables</h1>
+<div class="catalog-container">
+  <div class="product-card">
+    <img src="Image 3.jpg" alt="Queens Model">
+    <div class="product-info"><h3>Queens Model Pool Table (8ft)</h3><p>(with all accessories)</p></div>
+    <input type="number" class="quantity-input" data-name="Queens Model Pool Table (8ft)" min="1" placeholder="Qty" />
+    <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="Image 3.jpg" alt="Queens Model">
+    <div class="product-info"><h3>Queens Model Pool Table (9ft)</h3><p>(with all accessories)</p></div>
+    <input type="number" class="quantity-input" data-name="Queens Model Pool Table (9ft)" min="1" placeholder="Qty" />
+    <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="Image 7.jpeg" alt="Snooker Model">
+    <div class="product-info"><h3>Snooker Model Pool Table (8ft)</h3><p>(with all accessories)</p></div>
+    <input type="number" class="quantity-input" data-name="Snooker Model Pool Table (8ft)" min="1" placeholder="Qty" />
+    <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="Image 7.jpeg" alt="Snooker Model">
+    <div class="product-info"><h3>Snooker Model Pool Table (9ft)</h3><p>(with all accessories)</p></div>
+    <input type="number" class="quantity-input" data-name="Snooker Model Pool Table (9ft)" min="1" placeholder="Qty" />
+    <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+  </div>
+</div>
+
+<h1>Accessories</h1>
+<div class="catalog-container">
+  <div class="product-card">
+    <img src="Ball set.jpg" alt="Ball Set">
+    <div class="product-info"><h3>Set of Balls</h3></div>
+    <input type="number" class="quantity-input" data-name="Ball Set" min="1" placeholder="Qty" />
+    <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="Pool cloth.jfif" alt="Pool Cloth">
+    <div class="product-info"><h3>Pool Cloth (9ft) <br> Colour: Green</h3></div>
+    <input type="number" class="quantity-input" data-name="Pool Cloth (9ft) - Green" min="1" placeholder="Qty" />
+    <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product-card">
+  <img src="Blue Cloth.jpg" alt="Blue Pool Cloth">
+  <div class="product-info"><h3>Pool Cloth (9ft) <br> Colour: Blue</h3></div>
+  <input type="number" class="quantity-input" data-name="Pool Cloth (9ft) - Blue" min="1" placeholder="Qty" />
+  <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product-card">
+  <img src="Pool cloth.jfif" alt="Pool Cloth">
+  <div class="product-info"><h3>Pool Cloth (8ft) <br> Colour: Green</h3></div>
+  <input type="number" class="quantity-input" data-name="Pool Cloth (8ft) - Green" min="1" placeholder="Qty" />
+  <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product-card">
+  <img src="Blue Cloth.jpg" alt="Blue Pool Cloth">
+  <div class="product-info"><h3>Pool Cloth (8ft) <br> Colour: Blue</h3></div>
+  <input type="number" class="quantity-input" data-name="Pool Cloth (8ft) - Blue" min="1" placeholder="Qty" />
+  <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product-card">
+  <img src="Snooker Cloth.jpg" alt="Snooker Pool Cloth">
+  <div class="product-info"><h3>Mini Snooker Pool Table Cloth (9ft)</h3><p>Only Green</p></div>
+  <input type="number" class="quantity-input" data-name="Mini Snooker Cloth (9ft)" min="1" placeholder="Qty" />
+  <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product-card">
+  <img src="Snooker Cloth.jpg" alt="Snooker Pool Cloth">
+  <div class="product-info"><h3>Snooker Pool Table Cloth (12ft)</h3><p>Only Green</p></div>
+  <input type="number" class="quantity-input" data-name="Snooker Cloth (12ft)" min="1" placeholder="Qty" />
+  <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product-card">
+  <img src="Cue.jpeg" alt="Pool Cue">
+  <div class="product-info"><h3>Pool Cue</h3></div>
+  <input type="number" class="quantity-input" data-name="Pool Cue" min="1" placeholder="Qty" />
+  <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product-card">
+  <img src="Chalk set.jfif" alt="Chalk Set">
+  <div class="product-info"><h3>Chalk Set</h3></div>
+  <input type="number" class="quantity-input" data-name="Chalk Set" min="1" placeholder="Qty" />
+  <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product-card">
+  <img src="Pocket set.jfif" alt="Pocket Set">
+  <div class="product-info"><h3>Pocket Set</h3></div>
+  <input type="number" class="quantity-input" data-name="Pocket Set" min="1" placeholder="Qty" />
+  <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+</div>
+</div>
+<div class="catalog-container">
+<div class="product-card">
+  <img src="Triangle.jpg" alt="Triangle">
+  <div class="product-info"><h3>Triangle</h3></div>
+  <input type="number" class="quantity-input" data-name="Triangle" min="1" placeholder="Qty" />
+  <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product-card">
+  <img src="Spider head.jpg" alt="Wrest head">
+  <div class="product-info"><h3>Wrest Head</h3></div>
+  <input type="number" class="quantity-input" data-name="Wrest Head" min="1" placeholder="Qty" />
+  <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product-card">
+  <img src="X-head.jpg" alt="X-Head">
+  <div class="product-info"><h3>X-Head</h3></div>
+  <input type="number" class="quantity-input" data-name="X-Head" min="1" placeholder="Qty" />
+  <button class="add-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+</div>
+</div>
+
+<div style="text-align: center; margin: 30px 0;">
+<button class="view-cart-btn" onclick="toggleCart()" style="display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #0f9d58, #34a853); 
+color: white; font-size: 18px; font-weight: bold; border-radius: 35px; text-decoration: none; 
+box-shadow: 0 4px 10px rgba(0,0,0,0.25); transition: all 0.3s ease;">View Cart</button>
+
+<div id="cartSidebar">
+  <h2>Your Cart</h2>
+  <div id="cartItems"></div>
+  <button class="proceed-btn" onclick="goToCustomerForm()">Proceed</button>
+  <button onclick="toggleCart()" style="position:absolute; top:10px; right:10px; background:red; color:white; border:none; border-radius:50%; width:30px; height:30px; cursor:pointer;">×</button>
+</div>
+
+<div class="customer-form" id="customerForm">
+  <h3>Customer Details</h3>
+  <input type="text" id="custName" placeholder="Your Name" required />
+  <input type="tel" id="custPhone" placeholder="WhatsApp Number" required />
+  <input type="email" id="custEmail" placeholder="Email (optional)" />
+  <textarea id="custAddress" placeholder="Delivery Address" required></textarea>
+
+  <!-- reCAPTCHA widget (v2 checkbox) -->
+  <div style="margin: 10px 0;">
+    <div class="g-recaptcha" data-sitekey="6LfZv9YrAAAAAArG-2vU58LLzHYZt0JkHQIcarNJ"></div>
+  </div>
+
+  <button class="proceed-btn" onclick="showModal()">Preview Order</button>
+</div>
+
+<div class="modal" id="previewModal">
+  <h3>Order Preview</h3>
+  <ul id="orderList"></ul>
+  <p><strong>Name:</strong> <span id="prevName"></span></p>
+  <p><strong>Phone:</strong> <span id="prevPhone"></span></p>
+  <p><strong>Email:</strong> <span id="prevEmail"></span></p>
+  <p><strong>Address:</strong> <span id="prevAddress"></span></p>
+  <button class="send-btn" onclick="sendOrder()">Send via Email</button>
+  <button onclick="document.getElementById('previewModal').style.display='none'" style="position:absolute; top:10px; right:10px; background:red; color:white; border:none; border-radius:50%; width:30px; height:30px; cursor:pointer;">×</button>
+</div>
+
+<script>
+  const cart = [];
+
+  function addToCart(btn) {
+    const card = btn.parentElement;
+    const input = card.querySelector('.quantity-input');
+    const product = input.dataset.name;
+    const qty = parseInt(input.value);
+    if (!qty || qty < 1) return alert('Enter valid quantity');
+    const existing = cart.find(i => i.name === product);
+    if (existing) existing.qty += qty;
+    else cart.push({ name: product, qty });
+    input.value = '';
+    renderCart();
+  }
+
+  function toggleCart() {
+    document.getElementById('cartSidebar').classList.toggle('active');
+  }
+
+  function renderCart() {
+    const box = document.getElementById('cartItems');
+    box.innerHTML = '';
+    cart.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'cart-item';
+      div.innerHTML = `${item.name} (x${item.qty}) <button onclick="removeItem(${i})">x</button>`;
+      box.appendChild(div);
+    });
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    renderCart();
+  }
+
+  function goToCustomerForm() {
+    if (cart.length === 0) return alert("Cart is empty");
+    document.getElementById("customerForm").style.display = "block";
+    toggleCart();
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  }
+
+  function showModal() {
+    const name = document.getElementById("custName").value.trim();
+    const phone = document.getElementById("custPhone").value.trim();
+    const email = document.getElementById("custEmail").value.trim();
+    const address = document.getElementById("custAddress").value.trim();
+    if (!name || !phone || !address) return alert("Fill all required fields");
+
+    // Check reCAPTCHA v2 checkbox response (client-side)
+    if (typeof grecaptcha === 'undefined') {
+      // If for some reason reCAPTCHA script didn't load, warn the user.
+      return alert("Captcha not loaded. Please refresh the page and try again.");
+    }
+    const captchaResponse = grecaptcha.getResponse();
+    if (!captchaResponse) {
+      return alert("Please complete the captcha to continue.");
+    }
+
+    document.getElementById("orderList").innerHTML = cart.map(i => `<li>${i.name}: ${i.qty}</li>`).join('');
+    document.getElementById("prevName").innerText = name;
+    document.getElementById("prevPhone").innerText = phone;
+    document.getElementById("prevEmail").innerText = email || '-';
+    document.getElementById("prevAddress").innerText = address;
+    document.getElementById("previewModal").style.display = "block";
+  }
+
+  function sendOrder() {
+    const name = document.getElementById("custName").value.trim();
+    const phone = document.getElementById("custPhone").value.trim();
+    const email = document.getElementById("custEmail").value.trim();
+    const address = document.getElementById("custAddress").value.trim();
+    let orderDetails = cart.map(i => `${i.name}: ${i.qty}`).join('\n');
+
+    const subject = "New Pool Table Order";
+    const body = `Order Details:\n${orderDetails}\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email || '-'}\nAddress: ${address}`;
+
+    const mailtoLink = `mailto:solidsandstripes.2005@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    // Start mail client
+    window.location.href = mailtoLink;
+
+    // Reset cart & form minimally (optional)
+    // NOTE: mailto can't confirm success; keep UX simple
+    // Reset captcha so user can send another order later
+    try {
+      if (typeof grecaptcha !== 'undefined') {
+        grecaptcha.reset();
+      }
+    } catch (e) {
+      console.warn('Error resetting reCAPTCHA:', e);
+    }
+  }
+</script>
+</body>
+</html>
