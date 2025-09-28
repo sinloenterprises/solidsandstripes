@@ -6,6 +6,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catalog - Solids and Stripes</title>
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfZv9YrAAAAAArG-2vU58LLzHYZt0JkHQIcarNJ"></script>
+  <!-- Your code -->
   <style>
     body {
       margin: 0;
@@ -281,7 +283,7 @@ box-shadow: 0 4px 10px rgba(0,0,0,0.25); transition: all 0.3s ease;">View Cart</
 
   <!-- reCAPTCHA widget (v2 checkbox) -->
   <div style="margin: 10px 0;">
-    <div class="g-recaptcha" data-sitekey="6LfZv9YrAAAAAArG-2vU58LLzHYZt0JkHQIcarNJ"></div>
+    <div class="g-recaptcha" data-sitekey="6Ld4fNcrAAAAANkqBGGfl3qpBOvMadotb7rWy-J3"></div>
   </div>
 
   <button class="proceed-btn" onclick="showModal()">Preview Order</button>
@@ -390,6 +392,14 @@ box-shadow: 0 4px 10px rgba(0,0,0,0.25); transition: all 0.3s ease;">View Cart</
     } catch (e) {
       console.warn('Error resetting reCAPTCHA:', e);
     }
+  }
+</script>
+<script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6LfZv9YrAAAAAArG-2vU58LLzHYZt0JkHQIcarNJ', {action: 'LOGIN'});
+    });
   }
 </script>
 </body>
