@@ -5,6 +5,7 @@
   <link rel="shortcut icon" type="x-icon" href="Webiste Logo Icon 2.jpeg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- SEO Optimization -->
   <title>Solids and Stripes | Best Pool Table Services in Sri Lanka</title>
   <meta name="description" content="Solids and Stripes is Sri Lanka's premier provider of pool and snooker tables. With over 1000+ installations, we offer sales, repairs, maintenance, and accessories.">
   <meta name="keywords" content="Pool Tables Sri Lanka, Snooker Tables, Billiard Accessories, Pool Table Repair, Buy Pool Table Colombo, Sinlo Enterprises">
@@ -12,6 +13,7 @@
   <link rel="canonical" href="https://solidsandstripespooltable.com/"/>
   <meta name="google-site-verification" content="1jVYBgQEODEbBRdY3q_tmnHpPGkFayhRKxjXm-eOjAA" />
 
+  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -21,6 +23,7 @@
 
 <body class="intro-playing home-background">
 
+  <!-- 1. INTRO VIDEO OVERLAY (Slide 1) -->
   <div id="intro-video">
       <video autoplay muted playsinline id="video-element">
           <source src="Intro Logo.mp4" type="video/mp4">
@@ -28,15 +31,19 @@
       </video>
   </div>
 
+  <!-- 2. MAIN WEBSITE CONTENT (Slide 2) -->
   <div id="website-container">
     
+    <!-- HEADER SECTION -->
     <header>
       <div class="header-container">
         <div class="header-content">
+          <!-- Left Column: Logo -->
           <div class="header-logo-col">
             <img src="Greenlogo.jpeg" alt="Solids and Stripes Official Logo" class="brand-logo">
           </div>
           
+          <!-- Right Column: Text -->
           <div class="header-text-col">
             <div class="header-titles">
               <h1>SOLIDS AND STRIPES</h1>
@@ -47,12 +54,14 @@
         </div>
       </div>
 
+      <!-- Login Area (Positioned safely top-right) -->
       <div id="login-area" class="login-status hidden">
         <span id="user-greeting">Welcome, <span id="user-name"></span>!</span>
         <button id="logout-btn">Logout</button>
       </div>    
     </header>
 
+    <!-- NAVIGATION BAR -->
     <nav id="nav-bar">
       <ul>
         <li><a href="products.html"><i class="fas fa-shopping-cart"></i> Products</a></li>
@@ -63,8 +72,10 @@
       </ul>
     </nav>
 
+    <!-- MAIN CONTENT -->
     <main id="main-content">
       
+      <!-- WELCOME & VIDEO SECTION -->
       <section class="hero-section glass-card">
         <div class="hero-grid">
           <div class="video-wrapper">
@@ -84,6 +95,7 @@
         </div>
       </section>
 
+      <!-- COMMUNITY JOIN SECTION -->
       <section class="community-section">
         <div class="cta-card glass-card">
           <h2>Join Our Community!</h2>
@@ -94,6 +106,7 @@
         </div>
       </section>
 
+      <!-- IMAGE SHOWCASE -->
       <section class="showcase-grid">
         <div class="showcase-item">
           <img src="Image 1.jpg" alt="Luxury Pool Table Installation Sri Lanka">
@@ -106,10 +119,12 @@
         </div>
       </section>
 
+      <!-- GALLERY LINK -->
       <div class="gallery-cta">
         <a href="gallery.html" class="btn btn-primary">Explore Our Full Gallery</a>
       </div>
 
+      <!-- FEATURED PRODUCTS SECTION -->
       <section id="products" class="products-section glass-card">
         <h2 class="section-title">Featured Products</h2>
         <div class="product-grid">
@@ -129,6 +144,7 @@
         </div>
       </section>
 
+      <!-- HOW TO PLAY SECTION -->
       <section class="how-to-play glass-card">
         <img src="Game Mode.jpg" alt="Game Mode" class="bg-deco bg-left">
         <img src="Pool Balls (Game Mode).jpg" alt="Pool Balls (Game Mode)" class="bg-deco bg-right">
@@ -142,10 +158,12 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
         <div class="footer-row">
           
+          <!-- Col 1: Quick Links -->
           <div class="footer-col">
             <h4>Quick Links</h4>
             <ul>
@@ -157,6 +175,7 @@
             </ul>
           </div>
 
+          <!-- Col 2: Contact Us -->
           <div class="footer-col">
             <h4>Contact Us</h4>
             <ul class="contact-list">
@@ -173,6 +192,7 @@
             </ul>
           </div>
 
+          <!-- Col 3: Follow Us -->
           <div class="footer-col">
             <h4>Follow Us</h4>
             <div class="social-icons-row">
@@ -185,6 +205,7 @@
             </div>
           </div>
 
+          <!-- Col 4: Logos -->
           <div class="footer-col logo-col-right">
             <img src="Solids and Stripes Logo.jpeg" alt="Solids and Stripes Logo" class="footer-logo-circle">
             <img src="Logo 2.png" alt="Solids and Stripes Text Logo" class="footer-logo-text">
@@ -193,4 +214,95 @@
         </div>
         
         <div class="footer-bottom">
-          <p
+          <p>&copy; 2024 Solids and Stripes Pool Table Business Services. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // --- Transition Logic ---
+    const introVideo = document.getElementById('intro-video');
+    const navBar = document.getElementById('nav-bar');
+    const headerElement = document.querySelector('header');
+    const videoElement = document.getElementById('video-element');
+
+    function slideTransition() {
+      // 1. Pause video on last frame
+      videoElement.pause();
+      
+      // 2. Add class to slide the video UP
+      introVideo.classList.add('slide-out');
+
+      // 3. Remove class from body to allow scrolling
+      setTimeout(() => {
+        document.body.classList.remove('intro-playing');
+      }, 1000); 
+    }
+
+    if (videoElement) {
+        videoElement.onended = () => {
+            setTimeout(slideTransition, 500); 
+        };
+    }
+
+    // Fallback if video fails to load or play
+    setTimeout(() => {
+        if(document.body.classList.contains('intro-playing')) {
+            slideTransition();
+        }
+    }, 7000);
+
+    // --- Sticky Nav ---
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= headerElement.offsetHeight) {
+        navBar.classList.add('sticky');
+      } else {
+        navBar.classList.remove('sticky');
+      }
+    });
+
+    // --- Login Logic ---
+    document.addEventListener('DOMContentLoaded', async function() {
+      const loggedInUserId = localStorage.getItem('loggedInUserId');
+      if (loggedInUserId) {
+        try {
+          const { initializeApp } = await import("https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js");
+          const { getFirestore, doc, getDoc } = await import("https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js");
+          
+          const firebaseConfig = {
+            apiKey: "AIzaSyC39UGkNhkYaRIOWCP6FBU7kHxs28OX_kY",
+            authDomain: "solids-and-stripes.firebaseapp.com",
+            projectId: "solids-and-stripes",
+            storageBucket: "solids-and-stripes.firebasestorage.app",
+            messagingSenderId: "915996630319",
+            appId: "1:915996630319:web:e4f104cd83861d9d77d5da"
+          };
+          
+          const app = initializeApp(firebaseConfig);
+          const db = getFirestore();
+          const userDoc = await getDoc(doc(db, "users", loggedInUserId));
+          
+          if (userDoc.exists()) {
+            const userData = userDoc.data();
+            const firstName = userData.firstName || userData.displayName?.split(' ')[0] || 'User';
+            document.getElementById('user-name').textContent = firstName;
+            document.getElementById('login-area').classList.remove('hidden');
+          }
+        } catch (error) {
+          console.error('Auth Error:', error);
+        }
+      }
+
+      const logoutBtn = document.getElementById('logout-btn');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+          localStorage.removeItem('loggedInUserId');
+          window.location.reload();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
