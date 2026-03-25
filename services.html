@@ -1,106 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="canonical" href="https://solidsandstripespooltable.com/services.html" />
-  <title>Our Services</title>
-  <link rel="shortcut icon" type="x-icon" href="Webiste Logo Icon 2.jpeg">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="services.css">
-  <link rel="stylesheet" href="footer.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Solids and Stripes Pool Table Services</title>
+    <meta name="description" content="Professional installation, maintenance, and expert repair services for all types of pool tables by Solids and Stripes.">
+    <link rel="canonical" href="https://solidsandstripespooltable.com/services.html" />
+    <link rel="shortcut icon" type="x-icon" href="Webiste Logo Icon 2.jpeg">
+    
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+        :root {
+            --primary-green: #076610;
+            --accent-green: #34a853;
+            --text-main: #333;
+            --text-muted: #666;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fcfcfc;
+            overflow-x: hidden;
+        }
+
+        /* --- Header Styling (Matches Home & Products) --- */
+        header {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: white;
+            flex-shrink: 0;
+            border: 3px solid rgba(255,255,255,0.2);
+        }
+
+        .header-text-container {
+            text-align: left;
+        }
+
+        .header-text-container h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: clamp(1.4rem, 3vw, 3rem);
+            margin: 0;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .header-text-container .by-sinlo {
+            font-size: clamp(0.8rem, 1.5vw, 2rem);
+            display: block;
+            margin-top: 4px;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        .header-text-container .page-indicator {
+            font-size: clamp(1.1rem, 2.5vw, 2.2rem);
+            font-weight: 700;
+            margin-top: 15px;
+            display: block;
+            color: #7effb3;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 10px;
+        }
+
+        /* --- Trust Bar --- */
+        .trust-bar {
+            background: #f0f4f0;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        /* --- Main Sections --- */
+        section {
+            padding: 40px 5% 80px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* --- Service Cards --- */
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 20px;
+        }
+
+        .service {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--accent-green);
+        }
+
+        .service h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 1px;
+        }
+
+        .service img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            transition: transform 0.5s ease;
+        }
+
+        .service:hover img {
+            transform: scale(1.03);
+        }
+
+        .service p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            text-align: justify;
+            flex-grow: 1;
+        }
+
+        /* --- Floating WhatsApp --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: #000;
+            color: white;
+            padding: 80px 5% 40px;
+        }
+
+        .footer-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 30px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background: var(--accent-green);
+            height: 3px;
+            width: 40px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col a {
+            color: #aaa;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-logo-img {
+            max-width: 180px;
+            border-radius: 8px;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; padding: 40px 20px; gap: 15px; }
+            .header-logo { width: 120px; height: 120px; }
+            .header-text-container { text-align: center; }
+            .trust-bar { flex-direction: column; gap: 15px; }
+            .service { padding: 25px; }
+            .section-heading h2 { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="Greenlogo.jpeg" align="left" width="170" height="170">
-    <h1 style="font-family:'Times New Roman', Times, serif; font-size: 60px; ">SOLIDS AND STRIPES</h1>
-    <h1 style="font-size: 45px;">Services</h1>
-  </header>
 
-  <section>
-    <h2>Our Premium Services</h2>
-    <div class="service-list">
-      <div class="service">
-        <h3>Installation</h3>
-        <img src="Image 4.jpg" alt="Installation Photo">
-        <p>Professional installation services to ensure your pool table is set up perfectly for optimal performance and longevity. Our experienced technicians carefully assemble and level your table, guaranteeing precise alignment and stability. We use specialized tools and techniques to ensure every component, from the slate to the cushions, is perfectly positioned. Trust us to deliver a seamless installation experience, so you can enjoy your new pool table with confidence and ease.</p>
-      </div>
-      <div class="service">
-        <h3>Maintenance</h3>
-        <img src="Image 5.jpg" alt="Maintenance Photo">
-        <p>Regular maintenance services to keep your pool table in top condition. Inspect and tighten the rail bolts periodically to maintain cushion responsiveness. Level the table by adjusting the leg levelers to prevent uneven play. Additionally, protect the table from direct sunlight and spills to preserve the quality of the wood and felt. With these simple steps, your pool table will remain in excellent condition for years of enjoyment.</p>
-      </div>
-      <div class="service">
-        <h3>Repair</h3>
-        <img src="Image 6.png" alt="Repair Photo">
-        <p>Expert repair services for any issues with your pool table. When your pool table needs repair, our skilled technicians are here to restore it to its original condition. We handle all types of repairs, including felt replacement, cushion reattachment, and slate leveling. Our team uses high-quality materials and precise methods to ensure your table plays like new. Whether it's a minor fix or a major overhaul, we are dedicated to providing top-notch repair services that extend the life of your pool table.</p>
-      </div>
+    <header>
+        <img src="Greenlogo.jpeg" alt="Solids and Stripes Logo" class="header-logo">
+        <div class="header-text-container">
+            <h1>SOLIDS AND STRIPES POOL TABLE SERVICES</h1>
+            <span class="by-sinlo">BY SINLO ENTERPRISES</span>
+            <span class="page-indicator">Our Services</span>
+        </div>
+    </header>
+
+    <!-- Trust Bar for Consistency -->
+    <div class="trust-bar">
+        <div class="trust-item"><i class="fas fa-certificate"></i> Certified Technicians</div>
+        <div class="trust-item"><i class="fas fa-history"></i> Reliable Support</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> Quality Guaranteed</div>
+        <div class="trust-item"><i class="fas fa-clock"></i> Timely Completion</div>
     </div>
-  </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="footer-col">
-          <h4>Search</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+    <main>
+        <section>
+            <div class="section-heading" data-aos="fade-up">
+                <h2>Our Premium Services</h2>
+                <p style="color: #666; margin-top: 10px;">Expert solutions to keep your game perfect.</p>
+            </div>
+            
+            <div class="service-list">    
+            <!-- Delivery -->
+                <article class="service" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Delivery</h3>
+                    <img src="Image 22.png" alt="Delivery Service">
+                    <p>We will deliver all the necessary items for a billiard pool table to your installation location. The goods will be transported very safely, without any damage, scratches, or breakage, following safety measures. However, the transportation cost for that will be determined by the distance.</p>
+                </article>
+
+                  <!-- Installation -->
+                  <article class="service" data-aos="fade-up" data-aos-delay="200">
+                      <h3>Installation</h3>
+                      <img src="Image 21.png" alt="Professional Pool Table Installation">
+                      <p>Professional installation services to ensure your pool table is set up perfectly for optimal performance and longevity. Our experienced technicians carefully assemble and level your table, guaranteeing precise alignment and stability. We use specialized tools and techniques to ensure every component, from the slate to the cushions, is perfectly positioned. Trust us to deliver a seamless installation experience, so you can enjoy your new pool table with confidence and ease.</p>
+                  </article>  
+
+                <!-- Repair -->
+                <article class="service" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Repair</h3>
+                    <img src="Image 6.png" alt="Pool Table Repair Service">
+                    <p>Expert repair services are available for any problem you may have with your pool table. When your pool table needs to be repaired, our skilled technicians are here to restore it to its original condition or to the condition you desire. We handle all types of repairs, including cloth change, cushion re-installation, slate leveling, table polishing, etc. We use high-quality materials and precision methods to ensure your table performs like new.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="background: #f0f4f0; text-align: center; border-radius: 40px; margin-bottom: 60px;" data-aos="zoom-in">
+            <h3 style="color: var(--primary-green); font-size: 1.8rem; margin-bottom: 15px;">Need professional help with your table?</h3>
+            <p style="margin-bottom: 30px; color: #555;">Contact our expert technicians today for a consultation or quote.</p>
+            <a href="contact.html" style="display: inline-block; padding: 15px 40px; background: var(--primary-green); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                Get in Touch Now
+            </a>
+        </section>
+    </main>
+
+    <!-- Floating WhatsApp Interaction -->
+    <a href="https://wa.me/777607234" class="whatsapp-float" target="_blank" title="Chat with us">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer class="footer">
+        <div class="footer-row">
+            <div class="footer-col">
+                <h4>Search</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">FAQ & Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li style="display: flex; align-items: center; gap: 10px;">
+                        <img src="Gmail Icon.png" width="20" height="20">
+                        <a href="mailto:solidsandstripes.2005@hotmail.com">solidsandstripes.2005@hotmail.com</a>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 10px; margin-top: 15px;">
+                        <img src="Whatsapp Icon.png" width="20" height="20">
+                        <a href="https://wa.me/777607234" target="_blank">+94777607234</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="https://web.facebook.com/profile.php?id=61563499032144"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/solid.and_stripes?igsh=ajFkN2luOTliaXF2"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCx1J0LvQCdvPQYxIuVmJCXQ"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    <li><a href="https://whatsapp.com/channel/0029Vb5ddkoEVccHGhIQAC1o"><i class="fab fa-whatsapp"></i> Whatsapp Channel</a></li>
+                    <li><a href="https://t.me/gehs636"><i class="fab fa-telegram"></i>  Telegram Channel</a></li>
+                    <li><a href="https://linkedin.com/company/solids-and-stripes-pool-table-services"><i class="fab fa-linkedin"></i> Linkedin</a></li>                </ul>
+            </div>
+
+            <div class="footer-col" style="text-align: center;">
+                <h4>Solid & Stripes</h4>
+                <img src="Solids and Stripes Logo.jpeg" alt="Logo" class="footer-logo-img" style="max-width: 150px;">
+            </div>
         </div>
-
-        <div class="footer-col">
-          <h4>Contact us</h4>
-          <ul>
-            <img src="Gmail Icon.png" alt="Gmail Icon" width="40" height="40">
-            <li><strong style="color:white">Email:</strong>
-            <br><a href="mailto:solidsandstripes.2005@hotmail.com">solidsandstripes.2005@hotmail.com</a></li>
-            <br><img src="Whatsapp Icon.png" alt="WhatsApp Icon" width="40" height="40">
-            <li><strong style="color:white">WhatsApp:</strong>
-            <a href="https://wa.me/777704926" target="_blank">0777704926</a>
-            <a href="https://wa.me/777607234" target="_blank">0777607234</a></li>
-          </ul>
+        <div style="text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid #333; color: #666; font-size: 14px;">
+            &copy; 2024 Solids and Stripes Pool Table Business Services. All rights reserved.
         </div>
-
-        <div class="footer-col">
-          <h4>Follow us / Subscribe</h4>
-          <ul>
-            <a href="https://web.facebook.com/profile.php?id=61563499032144"><i class="fab fa-facebook-f"> Facebook</i></a>
-            <br>
-            <br>
-            <a href="https://www.instagram.com/solid.and_stripes?igsh=ajFkN2luOTliaXF2"><i class="fab fa-instagram"> Instagram</i></a>
-            <br>
-            <br>
-            <a href="https://www.youtube.com/channel/UCx1J0LvQCdvPQYxIuVmJCXQ"><i class="fab fa-youtube"> You Tube</i></a>
-            <br>
-            <br>
-            <a href="https://whatsapp.com/channel/0029Vb5ddkoEVccHGhIQAC1o" target="_blank"><i class="fab fa-whatsapp"> Whatsapp Channel</i></a>
-            <br>
-            <br>
-            <a href="https://t.me/gehs636" target="_blank"><i class="fab fa-telegram"> Telegram Channel</i></a>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Logo</h4>
-          <div class="social-links">
-            <img src="Solids and Stripes Logo.jpeg" alt="Solids and Stripes Logo" width="200" height="200">
-          </div>
-        </div>
-      </div>
-      <br>
-      <br>
-      <p style="color:white" align="center">&copy; 2024 Solids and Stripes Pool Table Business Services. All rights reserved.</p>
-
-      </nav>
-      </div>
     </footer>
-  </div>
+
+    <!-- Initialization for Scroll Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
 </body>
 </html>
-
-
-
