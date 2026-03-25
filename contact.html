@@ -1,130 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="shortcut icon" type="x-icon" href="Webiste Logo Icon 2.jpeg">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Solids and Stripes Pool Table Services</title>
-  <link rel="stylesheet" href="contactstyle.css">
-  <link rel="stylesheet" href="footer.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Solids and Stripes Pool Table Services</title>
+    <meta name="description" content="Get in touch with Solids and Stripes for pool table inquiries, installations, or repairs. Explore our FAQ for common questions.">
+    <link rel="canonical" href="https://solidsandstripespooltable.com/contact.html" />
+    <link rel="shortcut icon" type="x-icon" href="Webiste Logo Icon 2.jpeg">
+    
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <style>
+        :root {
+            --primary-green: #076610;
+            --accent-green: #34a853;
+            --text-main: #333;
+            --text-muted: #666;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fcfcfc;
+            overflow-x: hidden;
+        }
+
+        /* --- Header Styling --- */
+        header {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: white;
+            flex-shrink: 0;
+            border: 3px solid rgba(255,255,255,0.2);
+        }
+
+        .header-text-container h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: clamp(1.4rem, 4vw, 3rem);
+            margin: 0;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .header-text-container .by-sinlo {
+            font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+            display: block;
+            margin-top: 4px;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        .header-text-container .page-indicator {
+            font-size: clamp(1.1rem, 2.5vw, 2rem);
+            font-weight: 700;
+            margin-top: 15px;
+            display: block;
+            color: #7effb3;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 10px;
+        }
+
+        /* --- Trust Bar --- */
+        .trust-bar {
+            background: #f0f4f0;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        /* --- Contact Section --- */
+        section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- Contact Cards --- */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent-green);
+        }
+
+        .card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: block;
+        }
+
+        /* --- FAQ Section --- */
+        .faq-section {
+            background-color: #f9f9f9;
+            padding: 80px 5%;
+            border-radius: 40px;
+            margin-bottom: 60px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid #eee;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            font-weight: 600;
+            color: var(--primary-green);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background-color: #f0fdf4;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 25px;
+            color: var(--text-muted);
+            font-size: 15px;
+            border-top: 0px solid #eee;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 20px 25px;
+            border-top: 1px solid #eee;
+        }
+
+        .faq-question i {
+            transition: transform 0.4s;
+            font-size: 14px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* --- Form Styling --- */
+        .form-container {
+            background: white;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: inherit;
+            background: #fafafa;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #076610, #34a853);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(7, 102, 16, 0.2);
+        }
+
+        /* --- Floating WhatsApp --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: #000;
+            color: white;
+            padding: 80px 5% 40px;
+        }
+
+        .footer-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 30px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background: var(--accent-green);
+            height: 3px;
+            width: 40px;
+        }
+
+        .footer-col ul li {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .footer-col a {
+            color: #aaa;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+        /* --- Mobile --- */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; padding: 40px 20px; gap: 15px; }
+            .header-logo { width: 120px; height: 120px; }
+            .trust-bar { flex-direction: column; gap: 15px; }
+            .form-container { padding: 30px 20px; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="Greenlogo.jpeg" align="left" width="170" height="170">
-    <h1 style="font-family:'Times New Roman', Times, serif; font-size: 60px; ">SOLIDS AND STRIPES</h1>
-    <h1 style="font-size: 45px;">Contact Us</h1>
-  </header>
 
-  <section id="contact">
-    <h2>Get in Touch</h2>
-    <p class="intro-msg">Have questions or inquiries? We're here to help.</p>
+    <header>
+        <img src="Greenlogo.jpeg" alt="Solids and Stripes Logo" class="header-logo">
+        <div class="header-text-container">
+            <h1>SOLIDS AND STRIPES POOL TABLE SERVICES</h1>
+            <span class="by-sinlo">BY SINLO ENTERPRISES</span>
+            <span class="page-indicator">Contact Us & FAQ</span>
+        </div>
+    </header>
 
-    <div class="contact-cards">
-      <div class="card">
-        <img src="Gmail Icon.png" alt="Gmail Icon">
-        <h3>Email</h3>
-        <a href="mailto:solidsandstripes.2005@hotmail.com">solidsandstripes.2005<br>@hotmail.com</a>
-      </div>
-      <div class="card">
-        <img src="Whatsapp Icon.png" alt="WhatsApp Icon">
-        <h3>WhatsApp</h3>
-        <a href="https://wa.me/777704926" target="_blank">0777704926</a>
-        <br>
-        <a href="https://wa.me/777607234" target="_blank">0777607234</a>
-      </div>
-      <div class="card">
-        <img src="Insta Icon.png" alt="Instagram Icon">
-        <h3>Instagram</h3>
-        <a href="https://www.instagram.com/solid.and_stripes?igsh=ajFkN2luOTliaXF2" target="_blank">@solid.and_stripes</a>
-      </div>
-      <div class="card">
-        <img src="FB Icon.png" alt="Facebook Icon">
-        <h3>Facebook</h3>
-        <a href="https://web.facebook.com/profile.php?id=61563499032144" target="_blank">Solids and Stripes</a>
-      </div>
+    <div class="trust-bar">
+        <div class="trust-item"><i class="fas fa-headset"></i> Quick Response</div>
+        <div class="trust-item"><i class="fas fa-map-marker-alt"></i> Islandwide Service</div>
+        <div class="trust-item"><i class="fas fa-tools"></i> Expert Technicians</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> Satisfaction Guaranteed</div>
     </div>
 
-    <p class="form-heading">Or drop us a message directly:</p>
+    <main>
+        <section>
+            <div class="section-heading" data-aos="fade-up">
+                <h2>Get in Touch</h2>
+                <p class="intro-msg">We are here to assist with all your billiard needs.</p>
+            </div>
 
-    <form action="mailto:solidsandstripes.2005@hotmail.com" method="post" enctype="text/plain" class="contact-form">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <div class="contact-cards">
+                <div class="card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="Gmail Icon.png" alt="Email">
+                    <h3>Email</h3>
+                    <a href="mailto:solidsandstripes.2005@hotmail.com">solidsandstripes.2005<br>@hotmail.com</a>
+                </div>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Your email address" required>
+                <div class="card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="Whatsapp Icon.png" alt="WhatsApp">
+                    <h3>WhatsApp</h3>
+                    <a href="https://wa.me/777607234" target="_blank">0777607234</a>
+                </div>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" placeholder="Type your message here..." required></textarea>
+                <div class="card" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="Insta Icon.png" alt="Instagram">
+                    <h3>Instagram</h3>
+                    <a href="https://www.instagram.com/solid.and_stripes?igsh=ajFkN2luOTliaXF2" target="_blank">@solid.and_stripes</a>
+                </div>
 
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+                <div class="card" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="FB Icon.png" alt="Facebook">
+                    <h3>Facebook</h3>
+                    <a href="https://web.facebook.com/profile.php?id=61563499032144" target="_blank">Solids and Stripes</a>
+                </div>
+            </div>
 
+            <!-- FAQ SECTION -->
+            <div class="faq-section" data-aos="fade-up">
+                <div class="section-heading">
+                    <h2 style="font-size: 2rem;">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">Do you provide islandwide delivery? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">Yes, we provide secure delivery and professional installation services all across Sri Lanka.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How long does installation take? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">A standard professional installation usually takes between 2 to 4 hours, ensuring the table is perfectly leveled and the felt is flawlessly fitted.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What warranty do you offer? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">All our premium pool tables come with a comprehensive warranty covering structural defects to give you total peace of mind.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you offer repair services for old tables? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">Absolutely! We specialize in felt replacement, cushion repairs, and table leveling for any brand of pool table.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What room size do I need? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">As a general rule, you need at least 5 feet of clear space around the table for comfortable cueing. Contact us with your room dimensions for expert advice.</div>
+                    </div>
+                </div>
+            </div>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="footer-col">
-          <h4>Search</h4>
-          <ul>
-            <li><a href="solidsandstripes.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+            <div class="form-container" data-aos="fade-up">
+                <p style="text-align: center; font-weight: 600; font-size: 1.2rem; margin-bottom: 30px; color: var(--primary-green);">Or drop us a message directly:</p>
+                <form action="contact.php" method="post" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane" style="margin-left: 10px;"></i></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <a href="https://wa.me/777607234" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer class="footer">
+        <div class="footer-row">
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                  <li style="display: flex; align-items: center; gap: 10px;">
+                    <img src="Gmail Icon.png" width="20" height="20">
+                    <a href="mailto:solidsandstripes.2005@hotmail.com">solidsandstripes.2005@hotmail.com</a>
+                </li>
+                <li style="display: flex; align-items: center; gap: 10px; margin-top: 15px;">
+                    <img src="Whatsapp Icon.png" width="20" height="20">
+                    <a href="https://wa.me/777607234" target="_blank">+94777607234</a>                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <ul>
+                  <li><a href="https://web.facebook.com/profile.php?id=61563499032144"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                  <li><a href="https://www.instagram.com/solid.and_stripes?igsh=ajFkN2luOTliaXF2"><i class="fab fa-instagram"></i> Instagram</a></li>
+                  <li><a href="https://www.youtube.com/channel/UCx1J0LvQCdvPQYxIuVmJCXQ"><i class="fab fa-youtube"></i> YouTube</a></li>
+                  <li><a href="https://whatsapp.com/channel/0029Vb5ddkoEVccHGhIQAC1o"><i class="fab fa-whatsapp"></i> Whatsapp Channel</a></li>
+                  <li><a href="https://t.me/gehs636"><i class="fab fa-telegram"></i>  Telegram Channel</a></li>
+                  <li><a href="https://linkedin.com/company/solids-and-stripes-pool-table-services"><i class="fab fa-linkedin"></i> Linkedin</a></li>                </ul>
+            </div>
+            <div class="footer-col" style="text-align: center;">
+                <h4>Solid & Stripes</h4>
+                <img src="Solids and Stripes Logo.jpeg" alt="Logo" style="max-width: 150px; border-radius: 8px;">
+            </div>
         </div>
-
-        <div class="footer-col">
-          <h4>Contact us</h4>
-          <ul>
-            <img src="Gmail Icon.png" alt="Gmail Icon" width="40" height="40">
-            <li><strong style="color:white">Email:</strong>
-            <br><a href="mailto:solidsandstripes.2005@hotmail.com">solidsandstripes.2005@hotmail.com</a></li>
-            <br><img src="Whatsapp Icon.png" alt="WhatsApp Icon" width="40" height="40">
-            <li><strong style="color:white">WhatsApp:</strong>
-          <a href="https://wa.me/777704926" target="_blank">0777704926</a>
-          <a href="https://wa.me/777607234" target="_blank">0777607234</a></li>
-          </ul>
+        <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; color: #555; font-size: 13px;">
+            &copy; 2024 Solids and Stripes Pool Table Business Services. All rights reserved.
         </div>
-
-        <div class="footer-col">
-          <h4>Follow us / Subscribe</h4>
-          <ul>
-            <a href="https://web.facebook.com/profile.php?id=61563499032144"><i class="fab fa-facebook-f"> Facebook</i></a>
-            <br>
-            <br>
-            <a href="https://www.instagram.com/solid.and_stripes?igsh=ajFkN2luOTliaXF2"><i class="fab fa-instagram"> Instagram</i></a>
-            <br>
-            <br>
-            <a href="https://www.youtube.com/channel/UCx1J0LvQCdvPQYxIuVmJCXQ"><i class="fab fa-youtube"> You Tube</i></a>
-            <br>
-            <br>
-            <a href="https://whatsapp.com/channel/0029Vb5ddkoEVccHGhIQAC1o" target="_blank"><i class="fab fa-whatsapp"> Whatsapp Channel</i></a>
-            <br>
-            <br>
-            <a href="https://t.me/gehs636" target="_blank"><i class="fab fa-telegram"> Telegram Channel</i></a>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Logo</h4>
-          <div class="social-links">
-            <img src="Solids and Stripes Logo.jpeg" alt="Solids and Stripes Logo" width="200" height="200">
-          </div>
-        </div>
-      </div>
-      <br>
-      <br>
-      <p style="color:white" align="center">&copy; 2024 Solids and Stripes Pool Table Business Services. All rights reserved.</p>
-
-      </nav>
-      </div>
     </footer>
-  </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // FAQ Interactivity
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            })
+        });
+    </script>
 </body>
 </html>
-
-
-
