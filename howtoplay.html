@@ -2,84 +2,179 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="x-icon" href="Webiste Logo Icon 2.jpeg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn how to play the pool table game with our step-by-step guide">
-    <title>How to Play Pool Table Game</title>
+    <meta name="description" content="Master the art of pool with our modern step-by-step guide.">
+    <title>How to Play Pool | Solids & Stripes</title>
+    <link rel="shortcut icon" type="x-icon" href="Webiste Logo Icon 2.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-green: #005a32;
+            --accent-gold: #c5a059;
+            --dark-slate: #1a1a1a;
+            --light-bg: #f8f9fa;
+            --text-main: #333;
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
         }
+
+        /* Hero Section */
         header {
-            background-color: green;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+            url('Game Mode.jpg'); /* Replace 'The break.jpg' with your desired filename */
+            background-size: cover;
+            background-position: center;
             color: #fff;
-            padding: 1rem;
+            padding: 6rem 1rem;
             text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
+
+        header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            margin: 0;
+            border-bottom: 4px solid var(--accent-gold);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
         .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin: -50px auto 4rem auto; /* Overlaps hero for modern look */
+            padding: 0 20px;
         }
+
+        /* Step Cards */
         .tutorial-step {
-            margin-bottom: 2rem;
+            background: #fff;
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+            border-left: 6px solid var(--primary-green);
         }
-        .tutorial-step img {
-            max-width: 100%;
+
+        .tutorial-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            font-family: 'Oswald', sans-serif;
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            color: var(--dark-slate);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+        }
+
+        /* Modern Image Grid */
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
             border-radius: 8px;
-            margin-top: 1rem;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
+
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: var(--dark-slate);
+            color: #888;
             text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+            padding: 3rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0 auto;
+            color: #888;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .container { margin-top: 20px; }
+            .tutorial-step { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>How to Play Pool Table Game</h1>
+        <h1>Master the Table</h1>
+        <p style="color: #ddd; margin-top: 10px;">The definitive guide to 8-Ball excellence</p>
     </header>
+
     <div class="container">
-        <section>
-            <h2>Step 1: Setting Up the Table</h2>
-            <p style="font-size: 20px;">Start by arranging the balls in the triangle rack at one end of the table. Ensure the 8-ball is in the center and the front ball is placed on the foot spot.</p>
-            <img src="Ball Setup.webp" alt="Pool Table Setup" width="600" height="500">
-            <img src="Setup Ball.webp" alt="Pool Table Setup" width="550" height="500">
+        <section class="tutorial-step">
+            <span class="step-number">STEP 01</span>
+            <h2>Setting Up the Table</h2>
+            <p>Arrange the balls in the triangle rack at the foot of the table. The <strong>8-ball must be in the center</strong>, and the apex ball should rest exactly on the foot spot.</p>
+            <div class="image-container">
+                <img src="Ball Setup.webp" alt="Pool Table Setup" style="height: 400px; width: 700px;">
+            </div>
         </section>
 
         <section class="tutorial-step">
-            <h2>Step 2: The Break</h2>
-            <p style="font-size: 20px;">Position the cue ball behind the head string and use your cue stick to hit the balls. Try to spread them across the table with force.</p>
-            <img src="The break.jpg" alt="Break Shot">
+            <span class="step-number">STEP 02</span>
+            <h2>The Break</h2>
+            <p>Position the cue ball anywhere behind the head string. Strike with precision and force to scatter the rack and gain control of the table.</p>
+            <img src="The break.jpg" alt="Break Shot" style="height: 400px; width: 700px;">
         </section>
 
         <section class="tutorial-step">
-            <h2>Step 3: Stripes or Solids</h2>
-            <p style="font-size: 20px;">Once a ball is pocketed, decide whether you will play for stripes or solids, depending on the type of ball pocketed first.</p>
+            <span class="step-number">STEP 03</span>
+            <h2>Choosing Your Side</h2>
+            <p>After the break, the first ball pocketed determines your set: <strong>Stripes or Solids</strong>. If you clear a solid first, those are yours for the rest of the game.</p>
         </section>
 
         <section class="tutorial-step">
-            <h2>Step 4: Aiming and Shooting</h2>
-            <p style="font-size: 20px;">Focus on the ball you want to pocket. Aim carefully, align your cue stick, and strike the cue ball with the right amount of force.</p>
-            <img src="Aim and Shoot.png" alt="Aiming and Shooting">
+            <span class="step-number">STEP 04</span>
+            <h2>Aiming & Execution</h2>
+            <p>Align your vision with the target pocket. Maintain a steady bridge hand, follow through with your stroke, and control the cue ball's movement.</p>
+            <img src="Aim and Shoot.png" alt="Aiming and Shooting" style="height: 400px; width: 700px;">
         </section>
 
         <section class="tutorial-step">
-            <h2>Step 5: Winning the Game</h2>
-            <p style="font-size: 20px;">Pocket all your designated balls and finally the 8-ball into the called pocket to win. Avoid sinking the cue ball with the 8-ball.</p>
+            <span class="step-number">STEP 05</span>
+            <h2>Securing the Win</h2>
+            <p>Once all your balls are cleared, call your pocket for the 8-ball. Sinking the 8-ball early or scratching on the final shot results in an immediate loss.</p>
         </section>
     </div>
+
     <footer>
-        <p>&copy; 2024 Solids and Stripes Pool Table Business Services. All rights reserved.</p>
+        <p>&copy; 2024 Solids and Stripes Pool Table Business Services.</p>
     </footer>
+
 </body>
 </html>
