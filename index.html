@@ -222,39 +222,64 @@
 
   <!-- Scripts -->
 <script>
+  document.addEventListener('DOMContentLoaded', () => {
     const introVideo = document.getElementById('intro-video');
     const videoElement = document.getElementById('video-element');
+    const websiteContainer = document.getElementById('website-container');
     const navBar = document.getElementById('nav-bar');
     const headerElement = document.querySelector('header');
 
     function revealSite() {
-        console.log("Revealing site...");
-        if (introVideo) {
-            introVideo.style.transform = "translateY(-100%)";
-            introVideo.style.opacity = "0";
-            setTimeout(() => {
-                introVideo.style.display = "none";
-                document.body.classList.remove('intro-playing');
-            }, 800);
-        }
+      // Logic to clear the intro and show the website
+      if (introVideo && !introVideo.classList.contains('hidden')) {
+        console.log("Revealing Solids and Stripes website...");
+        
+        // 1. Slide and fade out the video
+        introVideo.style.transition = "transform 0.8s ease-in-out, opacity 0.8s ease";
+        introVideo.style.transform = "translateY(-100%)";
+        introVideo.style.opacity = "0";
+
+        // 2. Clean up classes and show content
+        setTimeout(() => {
+          introVideo.style.display = 'none';
+          document.body.classList.remove('intro-playing');
+          // Forcefully ensure the container is visible
+          if (websiteContainer) {
+            websiteContainer.style.display = 'block';
+            websiteContainer.style.opacity = '1';
+          }
+        }, 800);
+      }
     }
 
-    // Trigger when video ends
+    // --- TRIGGER 1: Video ends naturally ---
     if (videoElement) {
-        videoElement.onended = revealSite;
+      videoElement.onended = revealSite;
+      
+      // Safety: Sometimes 'onended' fails on mobile browsers
+      videoElement.addEventListener('ended', revealSite);
     }
 
-    // EMERGENCY FALLBACK (If video doesn't load on GitHub)
-    setTimeout(revealSite, 5000);
+    // --- TRIGGER 2: Emergency Fallback (CRITICAL for GitHub) ---
+    // This reveals the site after 6 seconds even if the video breaks
+    setTimeout(() => {
+      if (document.body.classList.contains('intro-playing')) {
+        console.warn("Video failed to end or trigger. Forcing site reveal.");
+        revealSite();
+      }
+    }, 6000);
 
-    // Sticky Nav
+    // --- STICKY NAVIGATION ---
     window.addEventListener('scroll', () => {
+      if (headerElement && navBar) {
         if (window.scrollY >= headerElement.offsetHeight) {
-            navBar.classList.add('sticky');
+          navBar.classList.add('sticky');
         } else {
-            navBar.classList.remove('sticky');
+          navBar.classList.remove('sticky');
         }
+      }
     });
+  });
 </script>
 </body>
 </html>
