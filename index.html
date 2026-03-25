@@ -221,88 +221,40 @@
   </div>
 
   <!-- Scripts -->
-  <script>
-    // --- Transition Logic ---
+<script>
     const introVideo = document.getElementById('intro-video');
+    const videoElement = document.getElementById('video-element');
     const navBar = document.getElementById('nav-bar');
     const headerElement = document.querySelector('header');
-    const videoElement = document.getElementById('video-element');
 
-    function slideTransition() {
-      // 1. Pause video on last frame
-      videoElement.pause();
-      
-      // 2. Add class to slide the video UP
-      introVideo.classList.add('slide-out');
-
-      // 3. Remove class from body to allow scrolling
-      setTimeout(() => {
-        document.body.classList.remove('intro-playing');
-      }, 1000); 
+    function revealSite() {
+        console.log("Revealing site...");
+        if (introVideo) {
+            introVideo.style.transform = "translateY(-100%)";
+            introVideo.style.opacity = "0";
+            setTimeout(() => {
+                introVideo.style.display = "none";
+                document.body.classList.remove('intro-playing');
+            }, 800);
+        }
     }
 
+    // Trigger when video ends
     if (videoElement) {
-        videoElement.onended = () => {
-            setTimeout(slideTransition, 500); 
-        };
+        videoElement.onended = revealSite;
     }
 
-    // Fallback if video fails to load or play
-    setTimeout(() => {
-        if(document.body.classList.contains('intro-playing')) {
-            slideTransition();
-        }
-    }, 7000);
+    // EMERGENCY FALLBACK (If video doesn't load on GitHub)
+    setTimeout(revealSite, 5000);
 
-    // --- Sticky Nav ---
+    // Sticky Nav
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= headerElement.offsetHeight) {
-        navBar.classList.add('sticky');
-      } else {
-        navBar.classList.remove('sticky');
-      }
-    });
-
-    // --- Login Logic ---
-    document.addEventListener('DOMContentLoaded', async function() {
-      const loggedInUserId = localStorage.getItem('loggedInUserId');
-      if (loggedInUserId) {
-        try {
-          const { initializeApp } = await import("https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js");
-          const { getFirestore, doc, getDoc } = await import("https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js");
-          
-          const firebaseConfig = {
-            apiKey: "AIzaSyC39UGkNhkYaRIOWCP6FBU7kHxs28OX_kY",
-            authDomain: "solids-and-stripes.firebaseapp.com",
-            projectId: "solids-and-stripes",
-            storageBucket: "solids-and-stripes.firebasestorage.app",
-            messagingSenderId: "915996630319",
-            appId: "1:915996630319:web:e4f104cd83861d9d77d5da"
-          };
-          
-          const app = initializeApp(firebaseConfig);
-          const db = getFirestore();
-          const userDoc = await getDoc(doc(db, "users", loggedInUserId));
-          
-          if (userDoc.exists()) {
-            const userData = userDoc.data();
-            const firstName = userData.firstName || userData.displayName?.split(' ')[0] || 'User';
-            document.getElementById('user-name').textContent = firstName;
-            document.getElementById('login-area').classList.remove('hidden');
-          }
-        } catch (error) {
-          console.error('Auth Error:', error);
+        if (window.scrollY >= headerElement.offsetHeight) {
+            navBar.classList.add('sticky');
+        } else {
+            navBar.classList.remove('sticky');
         }
-      }
-
-      const logoutBtn = document.getElementById('logout-btn');
-      if (logoutBtn) {
-        logoutBtn.addEventListener('click', () => {
-          localStorage.removeItem('loggedInUserId');
-          window.location.reload();
-        });
-      }
     });
-  </script>
+</script>
 </body>
 </html>
