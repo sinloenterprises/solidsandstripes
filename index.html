@@ -231,22 +231,9 @@
     const videoElement = document.getElementById('video-element');
 
     function slideTransition() {
-      // 1. Pause video on last frame
       if (videoElement) videoElement.pause();
-      
-      // 2. Add class to slide the video UP
-      if (introVideo) {
-        introVideo.classList.add('slide-out');
-        // Ensure it's hidden after the animation
-        setTimeout(() => {
-          introVideo.style.display = 'none';
-        }, 1000);
-      }
-
-      // 3. Remove class from body to allow scrolling
-      setTimeout(() => {
-        document.body.classList.remove('intro-playing');
-      }, 1000); 
+      if (introVideo) introVideo.style.display = 'none';
+      document.body.classList.remove('intro-playing');
     }
 
     if (videoElement) {
