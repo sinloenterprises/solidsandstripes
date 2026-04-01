@@ -80,10 +80,7 @@ body, html {
     text-align: center;
   }
   
-  /* Hide all main content during intro video */
-  body.intro-playing #website-container {
-    display: none !important;
-  }
+  /* Intro video logic removed */
   
   body.home-background {
     background-image: url('Pool Table Wallpaper Billiard Tables.jpg'); /* Replace with your background image path */
