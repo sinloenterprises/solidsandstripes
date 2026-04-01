@@ -225,29 +225,37 @@
   <!-- Scripts -->
   <script>
     // --- Transition Logic ---
-    const introVideo = document.getElementById('intro-video');
-    const navBar = document.getElementById('nav-bar');
-    const headerElement = document.querySelector('header');
-    const videoElement = document.getElementById('video-element');
+    document.addEventListener('DOMContentLoaded', () => {
+      const introVideo = document.getElementById('intro-video');
+      const navBar = document.getElementById('nav-bar');
+      const headerElement = document.querySelector('header');
+      const videoElement = document.getElementById('video-element');
 
-    function slideTransition() {
-      if (videoElement) videoElement.pause();
-      if (introVideo) introVideo.style.display = 'none';
-      document.body.classList.remove('intro-playing');
-    }
-
-    if (videoElement) {
-        videoElement.onended = () => {
-            setTimeout(slideTransition, 500); 
-        };
-    }
-
-    // Fallback if video fails to load or play
-    setTimeout(() => {
-        if(document.body.classList.contains('intro-playing')) {
-            slideTransition();
+      function slideTransition() {
+        console.log('Transitioning...');
+        if (videoElement) videoElement.pause();
+        if (introVideo) {
+          introVideo.style.display = 'none';
+          introVideo.style.visibility = 'hidden';
+          introVideo.style.zIndex = '-1';
         }
-    }, 7000);
+        document.body.classList.remove('intro-playing');
+        console.log('Transition complete.');
+      }
+
+      if (videoElement) {
+          videoElement.onended = () => {
+              setTimeout(slideTransition, 500); 
+          };
+      }
+
+      // Fallback if video fails to load or play
+      setTimeout(() => {
+          if(document.body.classList.contains('intro-playing')) {
+              slideTransition();
+          }
+      }, 5000);
+    });
 
     // --- Sticky Nav ---
     window.addEventListener('scroll', () => {
