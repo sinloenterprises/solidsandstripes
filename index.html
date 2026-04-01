@@ -23,17 +23,9 @@
   <script type="module" src="firebaseauth.js"></script>
 </head>
 
-<body class="intro-playing home-background">
+<body class="home-background">
 
-  <!-- 1. INTRO VIDEO OVERLAY (Slide 1) -->
-  <div id="intro-video">
-      <video autoplay muted playsinline id="video-element">
-          <source src="Intro Logo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
-  </div>
-
-  <!-- 2. MAIN WEBSITE CONTENT (Slide 2) -->
+  <!-- 2. MAIN WEBSITE CONTENT -->
   <div id="website-container">
     
     <!-- HEADER SECTION -->
@@ -224,48 +216,20 @@
 
   <!-- Scripts -->
   <script>
-    // --- Transition Logic ---
+    // --- Sticky Nav ---
     document.addEventListener('DOMContentLoaded', () => {
-      const introVideo = document.getElementById('intro-video');
       const navBar = document.getElementById('nav-bar');
       const headerElement = document.querySelector('header');
-      const videoElement = document.getElementById('video-element');
 
-      function slideTransition() {
-        console.log('Transitioning...');
-        if (videoElement) videoElement.pause();
-        if (introVideo) {
-          introVideo.style.display = 'none';
-          introVideo.style.visibility = 'hidden';
-          introVideo.style.zIndex = '-1';
-        }
-        document.body.classList.remove('intro-playing');
-        console.log('Transition complete.');
-      }
-
-      if (videoElement) {
-          videoElement.onended = () => {
-              setTimeout(slideTransition, 500); 
-          };
-      }
-
-      // Fallback if video fails to load or play
-      setTimeout(() => {
-          if(document.body.classList.contains('intro-playing')) {
-              slideTransition();
+      window.addEventListener('scroll', () => {
+        if (headerElement && navBar) {
+          if (window.scrollY >= headerElement.offsetHeight) {
+            navBar.classList.add('sticky');
+          } else {
+            navBar.classList.remove('sticky');
           }
-      }, 5000);
-    });
-
-    // --- Sticky Nav ---
-    window.addEventListener('scroll', () => {
-      if (headerElement && navBar) {
-        if (window.scrollY >= headerElement.offsetHeight) {
-          navBar.classList.add('sticky');
-        } else {
-          navBar.classList.remove('sticky');
         }
-      }
+      });
     });
 
     // --- Login Logic ---
