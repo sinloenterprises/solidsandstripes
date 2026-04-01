@@ -75,11 +75,7 @@ body, html {
   }
   
   /* Hide all main content during intro video */
-  body.intro-playing main,
-  body.intro-playing .photo-gallery,
-  body.intro-playing section:not(#intro-video),
-  body.intro-playing div:not(#intro-video):not(#intro-video *),
-  body.intro-playing br {
+  body.intro-playing #website-container {
     display: none !important;
   }
   
