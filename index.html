@@ -235,7 +235,13 @@
       if (videoElement) videoElement.pause();
       
       // 2. Add class to slide the video UP
-      if (introVideo) introVideo.classList.add('slide-out');
+      if (introVideo) {
+        introVideo.classList.add('slide-out');
+        // Ensure it's hidden after the animation
+        setTimeout(() => {
+          introVideo.style.display = 'none';
+        }, 1000);
+      }
 
       // 3. Remove class from body to allow scrolling
       setTimeout(() => {
