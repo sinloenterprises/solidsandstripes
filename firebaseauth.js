@@ -137,7 +137,7 @@ if (signIn) {
         showMessage('Login is Successful', 'signInMessage');
         const user = userCredential.user;
         localStorage.setItem('loggedInUserId', user.uid);
-        window.location.href = 'solidsandstripes.html';
+        window.location.href = 'index.html';
       } catch (error) {
         console.error('Email sign-in error', error);
         showMessage('Incorrect Email or Password or account does not exist', 'signInMessage');
@@ -159,7 +159,7 @@ if (signIn) {
           showMessage('Login is Successful', 'signInMessage');
           const user = userCredential.user;
           localStorage.setItem('loggedInUserId', user.uid);
-          window.location.href = 'solidsandstripes.html';
+          window.location.href = 'index.html';
         }
       } catch (err) {
         console.error('Phone sign-in error', err);
