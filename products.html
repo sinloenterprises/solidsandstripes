@@ -8,11 +8,9 @@
     <link rel="canonical" href="https://solidsandstripespooltable.com/products.html" />
     <link rel="shortcut icon" type="x-icon" href="Webiste Logo Icon 2.jpeg">
     
-    <!-- Fonts and Icons -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
-    <!-- Animation Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <style>
@@ -143,12 +141,39 @@
             border: 1px solid #f0f0f0;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .product:hover {
             transform: translateY(-12px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             border-color: var(--accent-green);
+        }
+
+        /* New Feature List Styling (ChatGPT-like) */
+        .product-features {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+            padding: 0;
+            flex-grow: 1;
+        }
+
+        .product-features li {
+            font-size: 14.5px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-muted);
+        }
+
+        .product-features i {
+            color: var(--accent-green);
+            margin-top: 4px;
+            font-size: 14px;
         }
 
         /* Badges */
@@ -308,7 +333,6 @@
         </div>
     </header>
 
-    <!-- Trust Bar to make site feel more established -->
     <div class="trust-bar">
         <div class="trust-item"><i class="fas fa-certificate"></i> Premium Grade Materials</div>
         <div class="trust-item"><i class="fas fa-truck"></i> Islandwide Delivery</div>
@@ -317,7 +341,6 @@
     </div>
 
     <main>
-        <!-- Pool Tables -->
         <section>
             <div class="section-heading" data-aos="fade-up">
                 <h2>Explore Our Range of Pool Tables</h2>
@@ -329,9 +352,16 @@
                     <div class="badge">BEST SELLER</div>
                     <h3>Queens Model Pool Table</h3>
                     <img src="Image 3.jpg" alt="Queens Model Pool Table">
-                    <p>Our most popular choice. High-quality build perfect for both casual enthusiasts and competitive play. (with all accessories)</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Our most popular customer choice</li>
+                        <li><i class="fas fa-check"></i> Very Affordable Price</li>
+                        <li><i class="fas fa-check"></i> High-quality professional build</li>
+                        <li><i class="fas fa-check"></i> Includes all accessories</li>
+                    </ul>
+
                     <a href="queenstable.html" style="text-decoration: none;">
-                        <span style="display:inline-block; padding: 12px 30px; background: #eee; border-radius: 5px; color: #333; font-weight: bold; transition: 0.3s;">View Details >>></span>
+                        <span style="display:block; padding: 12px; background: #eee; border-radius: 5px; color: #333; font-weight: bold; transition: 0.3s;">View Details >>></span>
                     </a>
                 </article>
 
@@ -339,21 +369,36 @@
                     <div class="badge" style="background: var(--primary-green);">PROFESSIONAL</div>
                     <h3>Snooker Model Pool Table</h3>
                     <img src="Image 7.jpg" alt="Snooker Model Pool Table">
-                    <p>Precision-engineered Snooker model for serious players who demand the best in surface accuracy and durability. (with all accessories)</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Precision-engineered design</li>
+                        <li><i class="fas fa-check"></i> Serious competitive surface accuracy</li>
+                        <li><i class="fas fa-check"></i> Enhanced frame & cloth durability</li>
+                        <li><i class="fas fa-check"></i> Includes all accessories</li>
+                    </ul>
+
                     <a href="snookertable.html" style="text-decoration: none;">
-                        <span style="display:inline-block; padding: 12px 30px; background: #eee; border-radius: 5px; color: #333; font-weight: bold; transition: 0.3s;">View Details >>></span>
+                        <span style="display:block; padding: 12px; background: #eee; border-radius: 5px; color: #333; font-weight: bold; transition: 0.3s;">View Details >>></span>
                     </a>
                 </article>
 
                 <article class="product" data-aos="fade-up" data-aos-delay="300">
                     <h3>Magician Model Pool Table</h3>
                     <img src="Magician model.jfif" alt="Magician Model Pool Table">
-                    <p>An elegant masterpiece designed to be the center-piece of any room, providing the ultimate smooth playing experience. (with all accessories)</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Elegant masterpiece aesthetic</li>
+                        <li><i class="fas fa-check"></i> Luxury center-piece for any room</li>
+                        <li><i class="fas fa-check"></i> Includes all accessories</li>
+                    </ul>
+
+                    <a href="#" style="text-decoration: none;">
+                        <span style="display:block; padding: 12px; background: #f9f9f9; border-radius: 5px; color: #aaa; font-weight: bold; cursor: default;">View Details >>></span>
+                    </a>
                 </article>
             </div>
         </section>
 
-        <!-- Accessories -->
         <section style="background-color: #fafafa;">
             <div class="section-heading" data-aos="fade-up">
                 <h2>Billiard Accessories</h2>
@@ -411,7 +456,6 @@
             </div>
         </section>
 
-        <!-- Interactive CTA -->
         <div class="catalog-cta" data-aos="fade-up">
             <h3 style="margin-bottom: 20px; font-size: 1.5rem; color: var(--primary-green);">Ready to upgrade your game room?</h3>
             <a href="productscatalog.html" class="catalog-btn">
@@ -421,7 +465,6 @@
         </div>
     </main>
 
-    <!-- Floating WhatsApp Interaction -->
     <a href="https://wa.me/777607234" class="whatsapp-float" target="_blank" title="Chat with us">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -431,7 +474,7 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solidsandstripes.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
@@ -474,7 +517,6 @@
         </div>
     </footer>
 
-    <!-- Initialization for Scroll Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({
