@@ -65,7 +65,7 @@
 
         .header-text-container h1 {
             font-family: 'Times New Roman', Times, serif;
-            font-size: clamp(1.4rem, 4vw, 3rem);
+            font-size: clamp(1.4rem, 3vw, 3rem);
             margin: 0;
             line-height: 1.1;
             text-transform: uppercase;
@@ -360,6 +360,11 @@
             transition: 0.3s;
             font-size: 15px;
         }
+        
+        .footer-logo-img {
+            max-width: 180px;
+            border-radius: 8px;
+        }
 
         /* --- Mobile --- */
         @media (max-width: 768px) {
@@ -373,7 +378,7 @@
 <body>
 
     <header>
-        <img src="Greenlogo.jpeg" alt="Solids and Stripes Logo" class="header-logo">
+        <img src="Greenlogo.png" alt="Solids and Stripes Logo" class="header-logo" style="height: 150px; width: 150px;">
         <div class="header-text-container">
             <h1>SOLIDS AND STRIPES POOL TABLE SERVICES</h1>
             <span class="by-sinlo">BY SINLO ENTERPRISES</span>
@@ -480,7 +485,7 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solidsandstripes.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -508,9 +513,10 @@
                   <li><a href="https://t.me/gehs636"><i class="fab fa-telegram"></i>  Telegram Channel</a></li>
                   <li><a href="https://linkedin.com/company/solids-and-stripes-pool-table-services"><i class="fab fa-linkedin"></i> Linkedin</a></li>                </ul>
             </div>
+
             <div class="footer-col" style="text-align: center;">
-                <h4>Solid & Stripes</h4>
-                <img src="Solids and Stripes Logo.jpeg" alt="Logo" style="max-width: 150px; border-radius: 8px;">
+                <img src="Solids and Stripes Logo.png" alt="Logo" class="footer-logo-img">
+                <img src="Sinlo Logo.png" alt="Logo" class="footer-logo-img">
             </div>
         </div>
         <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; color: #555; font-size: 13px;">
