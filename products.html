@@ -7,10 +7,9 @@
     <meta name="description" content="Explore our premium range of pool tables including Queens, Snooker, and Magician models, along with high-quality billiard accessories.">
     <link rel="canonical" href="https://solidsandstripespooltable.com/products.html" />
     <link rel="shortcut icon" type="x-icon" href="Webiste Logo Icon 2.jpeg">
-    
+
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <style>
@@ -18,36 +17,40 @@
             --primary-green: #076610;
             --accent-green: #34a853;
             --gold: #d4af37;
-            --text-main: #333;
+            --bg-soft: #f5f8f5;
+            --text-main: #2d2d2d;
             --text-muted: #666;
             --shadow: 0 10px 30px rgba(0,0,0,0.1);
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: var(--text-main);
-            background-color: #ffffff;
+            background:
+                radial-gradient(circle at top left, rgba(7, 102, 16, 0.06), transparent 28%),
+                radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.08), transparent 30%),
+                #ffffff;
             overflow-x: hidden;
         }
 
-        /* --- Header Styling --- */
+        a { color: inherit; }
+
+        /* Header */
         header {
-            background-color: var(--primary-green);
+            background: linear-gradient(135deg, var(--primary-green), #0b7b14);
             color: white;
             padding: 20px 5%;
             display: flex;
             align-items: center;
             justify-content: flex-start;
             gap: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.18);
             position: relative;
             z-index: 10;
         }
@@ -56,43 +59,52 @@
             width: 140px;
             height: 140px;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: 16px;
             background: white;
             flex-shrink: 0;
-            border: 3px solid rgba(255,255,255,0.2);
+            border: 3px solid rgba(255,255,255,0.18);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
         .header-text-container h1 {
             font-family: 'Times New Roman', Times, serif;
             font-size: clamp(1.4rem, 3vw, 3rem);
             margin: 0;
-            line-height: 1.1;
+            line-height: 1.08;
             text-transform: uppercase;
+            letter-spacing: 0.4px;
         }
 
         .header-text-container .by-sinlo {
-            font-size: clamp(0.8rem, 1.5vw, 2rem);
+            font-size: clamp(0.8rem, 1.5vw, 1.15rem);
             display: block;
             margin-top: 4px;
-            opacity: 0.9;
+            opacity: 0.92;
+            letter-spacing: 0.8px;
         }
 
         .header-text-container .page-indicator {
-            font-size: clamp(1.1rem, 2.5vw, 2rem);
+            font-size: clamp(1rem, 2.1vw, 1.6rem);
             font-weight: 700;
             margin-top: 15px;
-            display: block;
-            color: #7effb3;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #cbffd9;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.18);
+            padding: 8px 14px;
+            border: 1px solid rgba(255,255,255,0.16);
+            border-radius: 999px;
+            background: rgba(255,255,255,0.08);
         }
 
-        /* --- Trust Bar --- */
+        /* Trust Bar */
         .trust-bar {
             background: #f0f4f0;
             padding: 15px 5%;
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 30px;
             flex-wrap: wrap;
             border-bottom: 1px solid #ddd;
         }
@@ -104,9 +116,13 @@
             font-size: 14px;
             font-weight: 600;
             color: var(--primary-green);
+            background: white;
+            padding: 10px 14px;
+            border-radius: 999px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
 
-        /* --- Main Sections --- */
+        /* Section layout */
         section {
             padding: 60px 5%;
             max-width: 1300px;
@@ -115,16 +131,124 @@
 
         .section-heading {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 24px;
         }
 
         .section-heading h2 {
-            font-size: 2.2rem;
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
             color: var(--primary-green);
             font-family: 'Playfair Display', serif;
+            margin-bottom: 8px;
         }
 
-        /* --- Product Cards --- */
+        .section-heading p {
+            color: #666;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* Hero feature banner */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(7, 102, 16, 0.95), rgba(11, 123, 20, 0.92));
+            color: white;
+            border-radius: 28px;
+            padding: 34px;
+            box-shadow: 0 18px 40px rgba(7, 102, 16, 0.18);
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 34px;
+        }
+
+        .hero-banner::after {
+            content: "";
+            position: absolute;
+            inset: auto -50px -80px auto;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            gap: 24px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-copy h3 {
+            font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 12px;
+        }
+
+        .hero-copy p {
+            color: rgba(255,255,255,0.88);
+            max-width: 750px;
+            margin-bottom: 18px;
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .cta-btn {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 20px;
+            border-radius: 999px;
+            font-weight: 700;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .cta-btn.primary {
+            background: white;
+            color: var(--primary-green);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .cta-btn.secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-color: rgba(255,255,255,0.22);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .hero-points {
+            display: grid;
+            gap: 12px;
+        }
+
+        .hero-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.13);
+            border-radius: 18px;
+            padding: 16px;
+        }
+
+        .hero-point i {
+            color: #dbffdf;
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        .hero-point strong { display: block; margin-bottom: 2px; }
+
+        /* Product Cards */
         .product-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -133,12 +257,12 @@
 
         .product {
             background: white;
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 24px;
+            padding: 26px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 26px rgba(0,0,0,0.06);
             transition: var(--transition);
-            border: 1px solid #f0f0f0;
+            border: 1px solid #ececec;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -148,51 +272,36 @@
 
         .product:hover {
             transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-color: var(--accent-green);
+            box-shadow: 0 22px 40px rgba(0,0,0,0.11);
+            border-color: rgba(52, 168, 83, 0.55);
         }
 
-        /* New Feature List Styling (ChatGPT-like) */
-        .product-features {
-            list-style: none;
-            text-align: left;
-            margin: 20px 0;
-            padding: 0;
-            flex-grow: 1;
+        .product::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto auto 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-green), var(--gold));
         }
 
-        .product-features li {
-            font-size: 14.5px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            color: var(--text-muted);
-        }
-
-        .product-features i {
-            color: var(--accent-green);
-            margin-top: 4px;
-            font-size: 14px;
-        }
-
-        /* Badges */
         .badge {
             position: absolute;
             top: 20px;
             right: -35px;
             background: var(--gold);
             color: white;
-            padding: 5px 40px;
+            padding: 6px 42px;
             transform: rotate(45deg);
             font-size: 12px;
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            letter-spacing: 0.6px;
         }
 
         .product h3 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
+            font-size: 1.55rem;
+            margin: 16px 0 14px;
             color: var(--primary-green);
             font-family: 'Times New Roman', Times, serif;
         }
@@ -204,13 +313,171 @@
             border-radius: 12px;
             margin-bottom: 25px;
             transition: transform 0.5s ease;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.08);
         }
 
-        .product:hover img {
-            transform: scale(1.05);
+        .product:hover img { transform: scale(1.04); }
+
+        .product-lead {
+            color: #5d5d5d;
+            margin-bottom: 18px;
+            font-size: 14.5px;
+            min-height: 44px;
         }
 
-        /* --- Floating WhatsApp --- */
+        .product-features {
+            list-style: none;
+            text-align: left;
+            margin: 10px 0 18px;
+            padding: 0;
+            flex-grow: 1;
+        }
+
+        .product-features li {
+            font-size: 14.5px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-muted);
+        }
+
+        .product-features i {
+            color: var(--accent-green);
+            margin-top: 4px;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin: 18px 0 22px;
+        }
+
+        .spec {
+            background: #f8faf8;
+            border: 1px solid #e8efe8;
+            border-radius: 14px;
+            padding: 12px 10px;
+            text-align: left;
+        }
+
+        .spec span {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #7c7c7c;
+            margin-bottom: 3px;
+        }
+
+        .spec strong {
+            color: #2f2f2f;
+            font-size: 13.5px;
+            line-height: 1.35;
+        }
+
+        .product-cta {
+            margin-top: auto;
+            text-decoration: none;
+            display: block;
+            padding: 13px;
+            border-radius: 14px;
+            color: white;
+            font-weight: 700;
+            background: linear-gradient(135deg, #076610, #34a853);
+            box-shadow: 0 10px 20px rgba(7, 102, 16, 0.18);
+            transition: var(--transition);
+        }
+
+        .product-cta:hover { transform: translateY(-2px); }
+
+        .product-cta.muted {
+            background: #f1f1f1;
+            color: #888;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
+        /* Value cards */
+        .value-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin-top: 26px;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 18px;
+            padding: 22px;
+            border: 1px solid #ececec;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .value-card i {
+            font-size: 24px;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+        }
+
+        .value-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: #1f1f1f;
+        }
+
+        .value-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Accessories */
+        .accessories-wrap {
+            background: linear-gradient(180deg, #fafafa, #ffffff);
+            border-radius: 28px;
+            padding: 8px 0 0;
+        }
+
+        .accessory-note {
+            text-align: center;
+            margin-top: -8px;
+            margin-bottom: 26px;
+            color: #777;
+        }
+
+        /* Catalog CTA */
+        .catalog-cta {
+            background: linear-gradient(rgba(7, 102, 16, 0.05), rgba(7, 102, 16, 0.05));
+            padding: 60px 5%;
+            text-align: center;
+            margin: 40px 0 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .catalog-btn {
+            display: inline-block;
+            padding: 20px 45px;
+            background: linear-gradient(135deg, #076610, #34a853);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(7, 102, 16, 0.2);
+            transition: var(--transition);
+        }
+
+        .catalog-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(7, 102, 16, 0.3);
+        }
+
+        /* WhatsApp */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -237,35 +504,7 @@
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* --- Catalog Button --- */
-        .catalog-cta {
-            background: linear-gradient(rgba(7, 102, 16, 0.05), rgba(7, 102, 16, 0.05));
-            padding: 60px 5%;
-            text-align: center;
-            margin: 40px 0;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-        }
-
-        .catalog-btn {
-            display: inline-block;
-            padding: 20px 45px;
-            background: linear-gradient(135deg, #076610, #34a853);
-            color: white;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 10px 20px rgba(7, 102, 16, 0.2);
-            transition: var(--transition);
-        }
-
-        .catalog-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(7, 102, 16, 0.3);
-        }
-
-        /* --- Footer --- */
+        /* Footer */
         .footer {
             background-color: #000;
             color: white;
@@ -317,24 +556,57 @@
         .footer-logo-img {
             max-width: 180px;
             border-radius: 8px;
+            margin: 0 6px 10px;
         }
 
-        /* --- Mobile --- */
+        /* Mobile */
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; padding: 40px 20px; }
-            .header-logo { width: 120px; height: 120px; }
-            .trust-bar { flex-direction: column; gap: 15px; }
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 34px 20px;
+            }
+
+            .header-logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .trust-bar {
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch;
+            }
+
+            .trust-item {
+                justify-content: center;
+            }
+
+            .product-list {
+                grid-template-columns: 1fr;
+            }
+
+            .spec-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-banner { padding: 24px; }
+            .cta-row { justify-content: center; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="Greenlogo.png" alt="Solids and Stripes Logo" class="header-logo" style="height: 150px; width: 150px;">
+        <img src="Greenlogo.png" alt="Solids and Stripes Logo" class="header-logo">
         <div class="header-text-container">
             <h1>SOLIDS AND STRIPES POOL TABLE SERVICES</h1>
             <span class="by-sinlo">BY SINLO ENTERPRISES</span>
-            <span class="page-indicator">Our Products</span>
+            <span class="page-indicator"><i class="fas fa-cubes"></i> Our Products</span>
         </div>
     </header>
 
@@ -347,116 +619,226 @@
 
     <main>
         <section>
-            <div class="section-heading" data-aos="fade-up">
-                <h2>Explore Our Range of Pool Tables</h2>
-                <p style="color: #666; margin-top: 10px;">Masterfully crafted for professional play and home luxury.</p>
+            <div class="hero-banner" data-aos="fade-up">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <h3>Choose the right table with the right details.</h3>
+                        <p>
+                            Customers usually compare size, material, cloth quality, warranty, accessories, and delivery time before buying.
+                            This page now presents those details clearly, so visitors can understand your products faster and contact you with confidence.
+                        </p>
+                        <div class="cta-row">
+                            <a class="cta-btn primary" href="#pool-tables"><i class="fas fa-table"></i> View Pool Tables</a>
+                            <a class="cta-btn secondary" href="https://wa.me/777607234" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Get a Quotation</a>
+                        </div>
+                    </div>
+                    <div class="hero-points">
+                        <div class="hero-point">
+                            <i class="fas fa-ruler-combined"></i>
+                            <div><strong>Dimensions</strong> Standard and custom sizes can be discussed before order confirmation.</div>
+                        </div>
+                        <div class="hero-point">
+                            <i class="fas fa-gem"></i>
+                            <div><strong>Materials</strong> Built with strong wood, quality cloth, and durable accessories.</div>
+                        </div>
+                        <div class="hero-point">
+                            <i class="fas fa-shipping-fast"></i>
+                            <div><strong>Delivery & Support</strong> Islandwide service with installation support and after-sales guidance.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
+
+            <div class="section-heading" data-aos="fade-up">
+                <h2 id="pool-tables">Explore Our Range of Pool Tables</h2>
+                <p>Masterfully crafted for professional play, home luxury, and long-lasting performance.</p>
+            </div>
+
             <div class="product-list">
                 <article class="product" data-aos="fade-up" data-aos-delay="100">
                     <div class="badge">BEST SELLER</div>
                     <h3>Queens Model Pool Table</h3>
                     <img src="Image 3.jpg" alt="Queens Model Pool Table">
-                    
+
+                    <p class="product-lead">Our most popular choice for customers who want a refined look with a reliable and affordable build.</p>
+
                     <ul class="product-features">
-                        <li><i class="fas fa-check"></i> Our most popular customer choice</li>
-                        <li><i class="fas fa-check"></i> Very Affordable Price</li>
-                        <li><i class="fas fa-check"></i> High-quality professional build</li>
-                        <li><i class="fas fa-check"></i> Includes all accessories</li>
+                        <li><i class="fas fa-check"></i> Popular for home and recreational use</li>
+                        <li><i class="fas fa-check"></i> Professional-grade finish with elegant design</li>
+                        <li><i class="fas fa-check"></i> Built for smooth and stable gameplay</li>
+                        <li><i class="fas fa-check"></i> Includes the essential accessory set</li>
                     </ul>
 
-                    <a href="queenstable.html" style="text-decoration: none;">
-                        <span style="display:block; padding: 12px; background: #eee; border-radius: 5px; color: #333; font-weight: bold; transition: 0.3s;">View Details >>></span>
-                    </a>
+                    <div class="spec-grid">
+                        <div class="spec"><span>Dimensions</span><strong>9ft length and 4ft width</strong></div>
+                        <div class="spec"><span>Material</span><strong>Solid wood and slate top</strong></div>
+                        <div class="spec"><span>Cloth Type</span><strong>Premium felt finish</strong></div>
+                        <div class="spec"><span>Warranty</span><strong>Available on request</strong></div>
+                        <div class="spec"><span>Accessories</span><strong>Every accessories included</strong></div>
+                        <div class="spec"><span>Delivery</span><strong>Islandwide installation service</strong></div>
+                    </div>
+
+                    <a href="queenstable.html" class="product-cta">View Full Details <i class="fas fa-arrow-right"></i></a>
                 </article>
 
                 <article class="product" data-aos="fade-up" data-aos-delay="200">
                     <div class="badge" style="background: var(--primary-green);">PROFESSIONAL</div>
                     <h3>Snooker Model Pool Table</h3>
                     <img src="Image 7.jpg" alt="Snooker Model Pool Table">
-                    
+
+                    <p class="product-lead">Designed for customers who prefer precision play and a more traditional professional feel.</p>
+
                     <ul class="product-features">
-                        <li><i class="fas fa-check"></i> Precision-engineered design</li>
-                        <li><i class="fas fa-check"></i> Serious competitive surface accuracy</li>
-                        <li><i class="fas fa-check"></i> Enhanced frame & cloth durability</li>
-                        <li><i class="fas fa-check"></i> Includes all accessories</li>
+                        <li><i class="fas fa-check"></i> Precision-engineered surface for reliable play</li>
+                        <li><i class="fas fa-check"></i> Durable frame with strong support structure</li>
+                        <li><i class="fas fa-check"></i> Suitable for clubs, lounges, and serious players</li>
+                        <li><i class="fas fa-check"></i> Includes complete playing accessories</li>
                     </ul>
 
-                    <a href="snookertable.html" style="text-decoration: none;">
-                        <span style="display:block; padding: 12px; background: #eee; border-radius: 5px; color: #333; font-weight: bold; transition: 0.3s;">View Details >>></span>
-                    </a>
+                    <div class="spec-grid">
+                        <div class="spec"><span>Dimensions</span><strong style="color: red;">Not avaialble</strong></div>
+                        <div class="spec"><span>Materials</span><strong>Heavy-duty wood frame</strong></div>
+                        <div class="spec"><span>Cloth Type</span><strong>Speed felt / snooker cloth</strong></div>
+                        <div class="spec"><span>Warranty</span><strong>Available with purchase</strong></div>
+                        <div class="spec"><span>Accessories</span><strong>Full snooker accessory set</strong></div>
+                        <div class="spec"><span>Delivery</span><strong>Delivery depends on location</strong></div>
+                    </div>
+
+                    <a href="snookertable.html" class="product-cta">View Full Details <i class="fas fa-arrow-right"></i></a>
                 </article>
 
                 <article class="product" data-aos="fade-up" data-aos-delay="300">
+                    <div class="badge" style="background: #6f7c88;">PREMIUM</div>
                     <h3>Magician Model Pool Table</h3>
                     <img src="Magician model.jfif" alt="Magician Model Pool Table">
-                    
+
+                    <p class="product-lead">A stylish centrepiece model created for premium interiors and a more luxurious display.</p>
+
                     <ul class="product-features">
-                        <li><i class="fas fa-check"></i> Elegant masterpiece aesthetic</li>
-                        <li><i class="fas fa-check"></i> Luxury center-piece for any room</li>
-                        <li><i class="fas fa-check"></i> Includes all accessories</li>
+                        <li><i class="fas fa-check"></i> Elegant design suited to premium spaces</li>
+                        <li><i class="fas fa-check"></i> Strong build for lasting performance</li>
+                        <li><i class="fas fa-check"></i> Attractive centrepiece for game rooms</li>
+                        <li><i class="fas fa-check"></i> Accessories can be included as a package</li>
                     </ul>
 
-                    <a href="#" style="text-decoration: none;">
-                        <span style="display:block; padding: 12px; background: #f9f9f9; border-radius: 5px; color: #aaa; font-weight: bold; cursor: default;">View Details >>></span>
-                    </a>
+                    <div class="spec-grid">
+                        <div class="spec"><span>Dimensions</span><strong style="color: red;">Not avaialble</strong></div>
+                        <div class="spec"><span>Wood Type</span><strong>Quality hardwood design</strong></div>
+                        <div class="spec"><span>Cloth Type</span><strong>Premium felt finish</strong></div>
+                        <div class="spec"><span>Warranty</span><strong>Discuss with our team</strong></div>
+                        <div class="spec"><span>Accessories</span><strong>Optional full accessory package</strong></div>
+                        <div class="spec"><span>Delivery</span><strong>Islandwide service available</strong></div>
+                    </div>
+
+                    <a href="https://wa.me/777607234" target="_blank" rel="noopener" class="product-cta">Ask About Availability <i class="fas fa-phone-alt"></i></a>
                 </article>
+            </div>
+
+            <div class="value-strip" data-aos="fade-up">
+                <div class="value-card">
+                    <i class="fas fa-ruler"></i>
+                    <h4>Clear Product Information</h4>
+                    <p>Visitors can now compare dimensions, wood type, cloth type, warranty, accessories, and delivery details at a glance.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Faster Buyer Confidence</h4>
+                    <p>Better detail presentation reduces hesitation and helps customers move faster from browsing to inquiry.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h4>Built for Islandwide Sales</h4>
+                    <p>The product layout supports local buyers as well as customers outside your immediate area.</p>
+                </div>
             </div>
         </section>
 
-        <section style="background-color: #fafafa;">
+        <section class="accessories-wrap">
             <div class="section-heading" data-aos="fade-up">
                 <h2>Billiard Accessories</h2>
-                <p style="color: #666; margin-top: 10px;">The finest tools for the finest players.</p>
+                <p>The finest tools for the finest players.</p>
             </div>
-            
+            <p class="accessory-note">Every accessory card now feels more like part of a complete catalogue rather than a simple image list.</p>
+
             <div class="product-list">
                 <article class="product" data-aos="zoom-in">
                     <h3>Set of Balls</h3>
                     <img src="Ball set.jpg" alt="Ball set">
-                    <p>Complete set of 16 professional-grade balls (solids, stripes, and cue ball) for consistent performance.</p>
+                    <p class="product-lead">Complete set of 16 professional-grade balls for consistent and dependable play.</p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Suitable for casual and regular play</li>
+                        <li><i class="fas fa-check"></i> Designed for reliable balance and roll</li>
+                    </ul>
                 </article>
 
                 <article class="product" data-aos="zoom-in">
                     <h3>Pool Cloth</h3>
                     <img src="Pool cloth.jfif" alt="Pool Cloth">
-                    <p>Professional speed felt made from wool-nylon blend to ensure the smoothest ball roll possible.</p>
+                    <p class="product-lead">Professional speed felt made to support smooth ball movement and a cleaner finish.</p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Smooth playing surface</li>
+                        <li><i class="fas fa-check"></i> Professional look and feel</li>
+                    </ul>
                 </article>
 
                 <article class="product" data-aos="zoom-in">
                     <h3>Pool Cue</h3>
                     <img src="Cue.jpeg" alt="Pool Cue">
-                    <p>Hand-selected tapered sticks crafted for balance, grip, and precise striking power.</p>
+                    <p class="product-lead">Hand-selected cue stick crafted for balance, grip, and accurate striking power.</p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Comfortable grip and control</li>
+                        <li><i class="fas fa-check"></i> Suitable for most table types</li>
+                    </ul>
                 </article>
 
                 <article class="product" data-aos="zoom-in">
                     <h3>Chalk Set</h3>
                     <img src="Chalk set.jfif" alt="Chalk set">
-                    <p>Essential grip chalk to prevent miscues and give you maximum control over the cue ball.</p>
+                    <p class="product-lead">Essential grip chalk to reduce miscues and improve cue-ball control.</p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Helps improve tip grip</li>
+                        <li><i class="fas fa-check"></i> Small but important accessory</li>
+                    </ul>
                 </article>
 
                 <article class="product" data-aos="zoom-in">
                     <h3>Pocket Set</h3>
                     <img src="Pocket set.jfif" alt="Pocket set">
-                    <p>Durable leather or rubber pockets designed for high-impact absorption and longevity.</p>
+                    <p class="product-lead">Durable pockets made for long-lasting use and dependable ball retention.</p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Strong and practical build</li>
+                        <li><i class="fas fa-check"></i> Helps maintain table quality</li>
+                    </ul>
                 </article>
 
                 <article class="product" data-aos="zoom-in">
                     <h3>Triangle</h3>
                     <img src="Triangle.jpg" alt="Triangle">
-                    <p>Heavy-duty rack ensuring a tight formation for the perfect break every time.</p>
+                    <p class="product-lead">Heavy-duty rack that helps produce a tight formation before every break.</p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Simple, durable, and essential</li>
+                        <li><i class="fas fa-check"></i> Good for regular use</li>
+                    </ul>
                 </article>
 
                 <article class="product" data-aos="zoom-in">
-                    <h3>Spider head</h3>
+                    <h3>Spider Head</h3>
                     <img src="Spider head.jpg" alt="Spider head">
-                    <p>The spider serves as an elevated version of the rest. It becomes useful when the cue ball lies just beyond another ball, making a standard or cross rest unsuitable since the cue must pass over the obstructing ball. In such situations, the spider is the only tool that allows the shot to be played.</p>
+                    <p class="product-lead">A helpful rest accessory used when the cue ball is beyond another ball and a normal bridge is not suitable.</p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Useful for difficult shots</li>
+                        <li><i class="fas fa-check"></i> Professional support accessory</li>
+                    </ul>
                 </article>
 
                 <article class="product" data-aos="zoom-in">
                     <h3>Wrest Head / X-Head</h3>
                     <img src="X-head.jpg" alt="X-Head">
-                    <p>The X-head is a metal bracket used in pool tables to securely fasten the table's legs to the frame. Its "X" shape provides strong structural support, helping maintain the table's stability and balance during play.</p>
+                    <p class="product-lead">A sturdy support component used to help keep table structure balanced and secure.</p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Strong support element</li>
+                        <li><i class="fas fa-check"></i> Helps maintain stability</li>
+                    </ul>
                 </article>
             </div>
         </section>
@@ -464,13 +846,13 @@
         <div class="catalog-cta" data-aos="fade-up">
             <h3 style="margin-bottom: 20px; font-size: 1.5rem; color: var(--primary-green);">Ready to upgrade your game room?</h3>
             <a href="productscatalog.html" class="catalog-btn">
-                🛒 Browse Our Full Catalog
+                <i class="fas fa-shopping-cart"></i> Browse Our Full Catalog
             </a>
             <p style="margin-top: 20px; color: #777;">Order directly through our catalog for fast processing.</p>
         </div>
     </main>
 
-    <a href="https://wa.me/777607234" class="whatsapp-float" target="_blank" title="Chat with us">
+    <a href="https://wa.me/777607234" class="whatsapp-float" target="_blank" rel="noopener" title="Chat with us">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -491,11 +873,12 @@
                 <h4>Contact Us</h4>
                 <ul>
                     <li style="display: flex; align-items: center; gap: 10px;">
-                        <img src="Gmail Icon.png" width="20" height="20">
-                        <a href="mailto:solidsandstripes.2005@hotmail.com">solidsandstripes.2005<br>@hotmail.com</a>                    </li>
+                        <img src="Gmail Icon.png" width="20" height="20" alt="Gmail icon">
+                        <a href="mailto:solidsandstripes.2005@hotmail.com">solidsandstripes.2005<br>@hotmail.com</a>
+                    </li>
                     <li style="display: flex; align-items: center; gap: 10px;">
-                        <img src="Whatsapp Icon.png" width="20" height="20">
-                        <a href="https://wa.me/777607234" target="_blank">+94777607234</a>
+                        <img src="Whatsapp Icon.png" width="20" height="20" alt="WhatsApp icon">
+                        <a href="https://wa.me/777607234" target="_blank" rel="noopener">+94777607234</a>
                     </li>
                 </ul>
             </div>
@@ -507,8 +890,8 @@
                     <li><a href="https://www.instagram.com/solid.and_stripes?igsh=ajFkN2luOTliaXF2"><i class="fab fa-instagram"></i> Instagram</a></li>
                     <li><a href="https://www.youtube.com/channel/UCx1J0LvQCdvPQYxIuVmJCXQ"><i class="fab fa-youtube"></i> YouTube</a></li>
                     <li><a href="https://whatsapp.com/channel/0029Vb5ddkoEVccHGhIQAC1o"><i class="fab fa-whatsapp"></i> Whatsapp Channel</a></li>
-                    <li><a href="https://t.me/gehs636"><i class="fab fa-telegram"></i>  Telegram Channel</a></li>
-                    <li><a href="https://linkedin.com/company/solids-and-stripes-pool-table-services"><i class="fab fa-linkedin"></i> Linkedin</a></li>         
+                    <li><a href="https://t.me/gehs636"><i class="fab fa-telegram"></i> Telegram Channel</a></li>
+                    <li><a href="https://linkedin.com/company/solids-and-stripes-pool-table-services"><i class="fab fa-linkedin"></i> Linkedin</a></li>
                 </ul>
             </div>
 
@@ -518,7 +901,7 @@
             </div>
         </div>
         <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; color: #666; font-size: 14px;">
-            &copy; 2024 Solids and Stripes Pool Table Business Services. All rights reserved.
+            &copy; 2026 Solids and Stripes Pool Table Business Services. All rights reserved.
         </div>
     </footer>
 
