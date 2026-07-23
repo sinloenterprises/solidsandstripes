@@ -4,113 +4,539 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Queens Model | Solids & Stripes</title>
+    <meta name="description" content="Detailed product page for the Queens Model Pool Table featuring specifications, materials, accessories, and gallery images.">
     <link rel="shortcut icon" type="x-icon" href="Webiste Logo Icon 2.jpeg">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary-green: #076610;
+            --accent-green: #2dbb57;
             --accent-gold: #c5a059;
             --dark-slate: #1a1a1a;
             --light-bg: #f8f9fa;
+            --text: #404040;
         }
 
-        body { font-family: 'Inter', sans-serif; background-color: var(--light-bg); margin: 0; }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(7, 102, 16, 0.08), transparent 30%),
+                #f3f6f4;
+            margin: 0;
+            color: var(--text);
+        }
 
-        /* Modern Hero Header */
+        a { color: inherit; }
+
+        /* Hero */
         header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Image 3.jpg');
+            background:
+                linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.72)),
+                url('Image 3.jpg');
             background-size: cover;
             background-position: center;
             color: #fff;
-            padding: 5rem 1rem;
+            padding: 5.5rem 1rem 7rem;
             text-align: center;
+            position: relative;
         }
 
-        header h1 { font-family: 'Oswald', sans-serif; font-size: 3rem; margin: 0; text-transform: uppercase; }
-        .sub-header { color: var(--accent-gold); letter-spacing: 2px; font-weight: bold; }
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(197, 160, 89, 0.16);
+            border: 1px solid rgba(197, 160, 89, 0.35);
+            color: #f4e2bc;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
 
-        /* Overlapping Content Card */
+        header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sub-header {
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .hero-copy {
+            max-width: 900px;
+            margin: 18px auto 0;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 22px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 20px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: 0.3s ease;
+        }
+
+        .btn.primary {
+            background: white;
+            color: var(--primary-green);
+        }
+
+        .btn.secondary {
+            background: rgba(255,255,255,0.08);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .btn:hover { transform: translateY(-3px); }
+
+        /* Main layout */
         .container-main {
-            max-width: 1100px;
-            margin: -60px auto 4rem auto;
+            max-width: 1120px;
+            margin: -10px auto 4rem auto;
             padding: 0 20px;
         }
 
         .product-card {
             background: #fff;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            display: flex;
-            gap: 40px;
+            padding: 2.4rem;
+            border-radius: 24px;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+            display: grid;
+            grid-template-columns: 1fr 1.08fr;
+            gap: 32px;
             align-items: center;
-            border-top: 5px solid var(--accent-gold);
+            border-top: 6px solid var(--accent-gold);
         }
 
-        .product-info h2 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; color: var(--dark-slate); margin-top: 0; }
-        .product-info p { line-height: 1.8; color: #555; text-align: justify; }
+        .product-images img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+            display: block;
+        }
 
-        /* Feature List */
-        .features { list-style: none; padding: 0; }
-        .features li { margin-bottom: 12px; padding-left: 25px; position: relative; }
-        .features li::before { content: '✔'; position: absolute; left: 0; color: var(--primary-green); font-weight: bold; }
+        .product-info h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.8rem, 3.6vw, 2.3rem);
+            color: var(--dark-slate);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
 
-        /* Gallery Grid */
+        .product-info .intro {
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+            margin-bottom: 22px;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .features li {
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--primary-green);
+        }
+
+        .specs-section {
+            margin-top: 28px;
+            background: linear-gradient(180deg, #ffffff, #fbfcfb);
+            border: 1px solid #ececec;
+            border-radius: 22px;
+            padding: 24px;
+        }
+
+        .specs-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            color: var(--dark-slate);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .spec-item {
+            background: #f8faf8;
+            border: 1px solid #e6eee6;
+            border-radius: 16px;
+            padding: 14px 14px 12px;
+        }
+
+        .spec-item span {
+            display: block;
+            color: #7a7a7a;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 4px;
+        }
+
+        .spec-item strong {
+            color: #2d2d2d;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .highlight-row {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin: 20px 0 0;
+        }
+
+        .highlight-card {
+            background: white;
+            border-radius: 18px;
+            padding: 18px;
+            border: 1px solid #ececec;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+        }
+
+        .highlight-card i {
+            font-size: 24px;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .highlight-card h3 {
+            margin: 0 0 6px;
+            font-size: 1rem;
+            color: #222;
+        }
+
+        .highlight-card p {
+            margin: 0;
+            color: #666;
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
+        .gallery-title {
+            margin-top: 2.7rem;
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            color: var(--dark-slate);
+            font-size: 1.8rem;
+        }
+
+        .gallery-sub {
+            text-align: center;
+            color: #666;
+            margin-bottom: 1.2rem;
+        }
+
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
-            margin-top: 2rem;
+            margin-top: 1.3rem;
         }
 
-        .gallery img { width: 100%; border-radius: 8px; transition: transform 0.3s; }
+        .gallery figure {
+            margin: 0;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #ececec;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+        }
+
+        .gallery img {
+            width: 100%;
+            display: block;
+            transition: transform 0.3s;
+        }
+
         .gallery img:hover { transform: scale(1.03); }
 
+        .gallery figcaption {
+            padding: 12px 14px;
+            font-size: 0.92rem;
+            color: #666;
+        }
+
+        .bottom-cta {
+            margin: 2.4rem auto 0;
+            max-width: 1120px;
+            padding: 0 20px;
+        }
+
+        .bottom-panel {
+            background: linear-gradient(135deg, var(--primary-green), #0a7a17);
+            color: white;
+            border-radius: 24px;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 20px;
+            align-items: center;
+            box-shadow: 0 18px 35px rgba(7, 102, 16, 0.18);
+        }
+
+        .bottom-panel h3 {
+            margin: 0 0 8px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.7rem;
+        }
+
+        .bottom-panel p {
+            margin: 0;
+            color: rgba(255,255,255,0.88);
+            line-height: 1.7;
+        }
+
+        .bottom-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .bottom-buttons a {
+            text-decoration: none;
+            font-weight: 800;
+            padding: 13px 18px;
+            border-radius: 999px;
+            transition: 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bottom-buttons .quote {
+            background: white;
+            color: var(--primary-green);
+        }
+
+        .bottom-buttons .back {
+            background: rgba(255,255,255,0.08);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.16);
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2.8rem;
+        }
+
+        .footer-mini {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 900px) {
+            .product-card,
+            .bottom-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .highlight-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
-            .product-card { flex-direction: column; padding: 1.5rem; }
-            header h1 { font-size: 2rem; }
+            header {
+                padding: 4rem 1rem 5rem;
+            }
+
+            .container-main {
+                margin-top: -48px;
+            }
+
+            .product-card {
+                padding: 1.3rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions,
+            .bottom-buttons {
+                justify-content: center;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
+        <div class="hero-pill"><i class="fas fa-crown"></i> Premium Product Detail Page</div>
         <div class="sub-header">SOLIDS AND STRIPES</div>
         <h1>Queens Model Pool Table</h1>
+        <p class="hero-copy">
+            A refined and affordable model with a professional look, stable build, and clear product information for confident buyers.
+        </p>
+        <div class="hero-actions">
+            <a href="products.html" class="btn primary"><i class="fas fa-th-large"></i> Back to Products</a>
+            <a href="https://wa.me/777607234" target="_blank" rel="noopener" class="btn secondary"><i class="fab fa-whatsapp"></i> Request a Quote</a>
+        </div>
     </header>
 
     <div class="container-main">
         <section class="product-card">
-            <div class="product-images" style="flex: 1;">
-                <img src="Image 3.jpg" style="width: 100%; border-radius: 10px;" alt="Queens Model">
+            <div class="product-images">
+                <img src="Image 3.jpg" alt="Queens Model">
             </div>
-            <div class="product-info" style="flex: 1.5;">
+
+            <div class="product-info">
                 <h2>Exquisite Craftsmanship</h2>
-                <p>The Queens Model Pool Table stands out due to its superior craftsmanship and beautiful design, offering a unique blend of style and professional performance.</p>
+                <p class="intro">
+                    The Queens Model Pool Table is designed for customers who want an attractive appearance, dependable play quality,
+                    and a practical set of product details before buying. It suits homes, clubs, recreation rooms, and business spaces
+                    that need a stylish but durable table.
+                </p>
+
                 <ul class="features">
-                    <li>Sturdy wood frame for enhanced durability.</li>
-                    <li>Professional-grade felt for smooth, fast ball rolls.</li>
-                    <li>Luxurious drop leather pockets for a traditional charm.</li>
-                    <li>Solid wood rails and intricately detailed legs.</li>
-                    <li>Highest-grade rubber cushioning for consistent bounce.</li>
+                    <li>Sturdy wood frame for enhanced durability and everyday use.</li>
+                    <li>Professional-grade felt for smooth and controlled ball movement.</li>
+                    <li>Luxurious drop leather pockets for a classic, premium finish.</li>
+                    <li>Solid wood rails and detailed legs for a balanced structure.</li>
+                    <li>High-quality rubber cushioning for consistent rebound performance.</li>
                 </ul>
+
+                <div class="specs-section">
+                    <div class="specs-title"><i class="fas fa-clipboard-list"></i> Quick Product Specifications</div>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span>Dimensions</span>
+                            <strong>9ft length and 4ft width</strong>
+                        </div>
+                        <div class="spec-item">
+                            <span>Material</span>
+                            <strong>Solid wood and slate top</strong>
+                        </div>
+                        <div class="spec-item">
+                            <span>Cloth Type</span>
+                            <strong>Premium green felt finish</strong>
+                        </div>
+                        <div class="spec-item">
+                            <span>Warranty</span>
+                            <strong>Warranty options available on request</strong>
+                        </div>
+                        <div class="spec-item">
+                            <span>Accessories</span>
+                            <strong>Every accessories are included</strong>
+                        </div>
+                        <div class="spec-item">
+                            <span>Delivery</span>
+                            <strong>Delivers to every location</strong>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <div class="highlight-row">
+            <div class="highlight-card">
+                <i class="fas fa-ruler-combined"></i>
+                <h3>Easy to Compare</h3>
+                <p>Customers can now see the main product details quickly without needing to ask for the basics first.</p>
+            </div>
+            <div class="highlight-card">
+                <i class="fas fa-gem"></i>
+                <h3>Premium Presentation</h3>
+                <p>The page now looks more like a proper retail product page with clear visual structure and cleaner specification blocks.</p>
+            </div>
+            <div class="highlight-card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Fast Contact Option</h3>
+                <p>Visitors can go straight to WhatsApp or return to the product list to continue browsing.</p>
+            </div>
+        </div>
+
+        <h2 class="gallery-title">Gallery Views</h2>
+        <p class="gallery-sub">A few angles to help buyers picture the model more clearly.</p>
+
         <div class="gallery">
-            <img src="Image 1.jpg" alt="Queens View 1">
-            <img src="Image 2.jpg" alt="Queens View 2">
-            <img src="Image 4.jpg" alt="Queens View 3">
+            <figure>
+                <img src="Image 1.jpg" alt="Queens View 1">
+                <figcaption>Front display view</figcaption>
+            </figure>
+            <figure>
+                <img src="Image 2.jpg" alt="Queens View 2">
+                <figcaption>Side detail and finish</figcaption>
+            </figure>
+            <figure>
+                <img src="Image 4.jpg" alt="Queens View 3">
+                <figcaption>Complete room presentation</figcaption>
+            </figure>
         </div>
     </div>
-    
-    <footer style="background-color: #1a1a1a; color: #fff; text-align: center; padding: 2rem 1rem; margin-top: 2rem;">
-      <p style="margin: 0; font-size: 14px; opacity: 0.8;">
-          &copy; 2024 Solids and Stripes Pool Table Business Services.
-      </p>
-  </footer>
-  
+
+    <div class="bottom-cta">
+        <div class="bottom-panel">
+            <div>
+                <h3>Need a quotation or product confirmation?</h3>
+                <p>
+                    Send us a message on WhatsApp and we can discuss size, material, accessories, delivery, and installation details for your space.
+                </p>
+            </div>
+            <div class="bottom-buttons">
+                <a href="https://wa.me/777607234" target="_blank" rel="noopener" class="quote"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                <a href="products.html" class="back"><i class="fas fa-arrow-left"></i> Back to Products</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-mini">&copy; 2026 Solids and Stripes Pool Table Business Services.</p>
+    </footer>
+
 </body>
 </html>
