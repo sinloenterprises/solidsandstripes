@@ -273,6 +273,280 @@
             border-radius: 8px;
         }
 
+
+        /* --- Expanded Service Content --- */
+        .service-expanded {
+            text-align: left;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-expanded::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+        }
+
+        .service-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            align-self: flex-start;
+            width: fit-content;
+            padding: 7px 14px;
+            border-radius: 50px;
+            background: #eef8f0;
+            color: var(--primary-green);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .service-expanded h3 {
+            text-align: left;
+            margin-bottom: 18px;
+            font-size: clamp(1.65rem, 2.5vw, 2rem);
+        }
+
+        .service-expanded img {
+            height: 230px;
+        }
+
+        .service-content {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .service-intro {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: left;
+            margin: 0;
+        }
+
+        .service-points {
+            display: grid;
+            gap: 14px;
+        }
+
+        .service-point {
+            display: grid;
+            grid-template-columns: 44px 1fr;
+            gap: 13px;
+            align-items: start;
+            padding: 15px 16px;
+            border: 1px solid #e7ece8;
+            border-radius: 14px;
+            background: #fbfdfb;
+            transition: var(--transition);
+        }
+
+        .service-point:hover {
+            transform: translateY(-2px);
+            border-color: #b8d9be;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+        }
+
+        .point-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: #eaf5ec;
+            color: var(--primary-green);
+            font-size: 1.05rem;
+        }
+
+        .service-point h4 {
+            color: #1f3f26;
+            font-size: 1rem;
+            margin: 1px 0 5px;
+            font-weight: 700;
+        }
+
+        .service-point p {
+            margin: 0;
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: #666;
+            text-align: left;
+        }
+
+        .process-box,
+        .repair-process {
+            padding: 20px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #f2f8f3, #f8fbf8);
+            border: 1px solid #dbe9dd;
+        }
+
+        .process-title {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 15px;
+            color: var(--primary-green);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .process-step {
+            display: grid;
+            grid-template-columns: 34px 1fr;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .process-step span,
+        .request-card > span {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-green);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .process-step p {
+            margin: 0;
+            font-size: 0.87rem;
+            line-height: 1.55;
+            color: #5f5f5f;
+        }
+
+        .highlight-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px 16px;
+            border-left: 4px solid var(--accent-green);
+            border-radius: 10px;
+            background: #f5fbf6;
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .highlight-note > i {
+            color: var(--primary-green);
+            margin-top: 3px;
+        }
+
+        .example-box {
+            padding: 19px 20px;
+            border-radius: 15px;
+            background: #f8f8f8;
+            border: 1px solid #e5e5e5;
+        }
+
+        .example-heading {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .example-box p {
+            color: #616161;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .repair-request-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .request-card {
+            position: relative;
+            padding: 16px;
+            background: white;
+            border: 1px solid #e2e9e3;
+            border-radius: 13px;
+        }
+
+        .request-card > span {
+            margin-bottom: 11px;
+        }
+
+        .request-card h4 {
+            color: #1f3f26;
+            font-size: 0.98rem;
+            margin-bottom: 6px;
+        }
+
+        .request-card p {
+            margin: 0;
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+
+        .repair-contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 12px;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: 0 7px 18px rgba(37, 211, 102, 0.18);
+        }
+
+        .repair-contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 11px 22px rgba(37, 211, 102, 0.25);
+            color: white;
+        }
+
+        .service-contact {
+            margin: -4px 0 0;
+            text-align: center;
+            color: #666;
+            font-size: 0.92rem;
+        }
+
+        .service-contact i {
+            color: var(--primary-green);
+            margin-right: 5px;
+        }
+
+        .service-contact a {
+            color: var(--primary-green);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
         /* --- Mobile Responsive --- */
         @media (max-width: 768px) {
             header { flex-direction: column; text-align: center; padding: 40px 20px; gap: 15px; }
@@ -281,18 +555,31 @@
             .trust-bar { flex-direction: column; gap: 15px; }
             .service { padding: 25px; }
             .section-heading h2 { font-size: 2rem; }
+            .service-expanded {
+                padding: 24px 20px;
+            }
+
+            .service-expanded img {
+                height: 205px;
+            }
+
+            .process-steps,
+            .repair-request-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-point {
+                grid-template-columns: 40px 1fr;
+            }
+
+            .point-icon {
+                width: 40px;
+                height: 40px;
+            }
+
         }
     </style>
 </head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN8H0ZX5H4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EN8H0ZX5H4');
-</script>
 <body>
 
     <header>
@@ -319,26 +606,191 @@
                 <p style="color: #666; margin-top: 10px;">Expert solutions to keep your game perfect.</p>
             </div>
             
-            <div class="service-list">    
-            <!-- Delivery -->
-                <article class="service" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-list">
+
+                <!-- Delivery -->
+                <article class="service service-expanded" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-badge"><i class="fas fa-truck"></i> Delivery</div>
                     <h3>Delivery</h3>
-                    <img src="Image 22.png" alt="Delivery Service">
-                    <p>We will deliver all the necessary items for a billiard pool table to your installation location. The goods will be transported very safely, without any damage, scratches, or breakage, following safety measures. However, the transportation cost for that will be determined by the distance.</p>
+                    <img src="Image 22.png" alt="Pool Table Delivery Service">
+
+                    <div class="service-content">
+                        <p class="service-intro">
+                            We deliver and install pool tables islandwide. Our team handles the transportation and setup process carefully to help ensure your pool table reaches the installation location safely and is prepared for proper play.
+                        </p>
+
+                        <div class="service-points">
+                            <div class="service-point">
+                                <span class="point-icon"><i class="fas fa-box-open"></i></span>
+                                <div>
+                                    <h4>Accessories Included</h4>
+                                    <p>All necessary accessories are provided with the pool table, and there is no additional charge for these included accessories.</p>
+                                </div>
+                            </div>
+
+                            <div class="service-point">
+                                <span class="point-icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <div>
+                                    <h4>Islandwide Delivery</h4>
+                                    <p>We provide delivery service to installation locations throughout Sri Lanka.</p>
+                                </div>
+                            </div>
+
+                            <div class="service-point">
+                                <span class="point-icon"><i class="fas fa-city"></i></span>
+                                <div>
+                                    <h4>Delivery Charge</h4>
+                                    <p>If the pool table is delivered to an installation location within Colombo, there is no delivery fee, <br>If it is out of Colombo, it will be charged based on the required transportation distance and arrangements as our stock is stored in Colombo.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="process-box">
+                            <div class="process-title">
+                                <i class="fas fa-clipboard-check"></i>
+                                <span>How the delivery &amp; installation process works</span>
+                            </div>
+                            <div class="process-steps">
+                                <div class="process-step"><span>01</span><p>Confirm the pool table and installation location.</p></div>
+                                <div class="process-step"><span>02</span><p>Arrange transportation from Colombo.</p></div>
+                                <div class="process-step"><span>03</span><p>Deliver the pool table and included accessories to the location.</p></div>
+                                <div class="process-step"><span>04</span><p>Complete the required installation and labour work.</p></div>
+                            </div>
+                        </div>
+                    </div>
                 </article>
 
-                  <!-- Installation -->
-                  <article class="service" data-aos="fade-up" data-aos-delay="200">
-                      <h3>Installation</h3>
-                      <img src="Image 21.png" alt="Professional Pool Table Installation">
-                      <p>Professional installation services to ensure your pool table is set up perfectly for optimal performance and longevity. Our experienced technicians carefully assemble and level your table, guaranteeing precise alignment and stability. We use specialized tools and techniques to ensure every component, from the slate to the cushions, is perfectly positioned. Trust us to deliver a seamless installation experience, so you can enjoy your new pool table with confidence and ease.</p>
-                  </article>  
+                <!-- Installation -->
+                <article class="service service-expanded" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-badge"><i class="fas fa-ruler-combined"></i> Installation</div>
+                    <h3>Installation</h3>
+                    <img src="Image 21.png" alt="Professional Pool Table Installation">
+
+                    <div class="service-content">
+                        <p class="service-intro">
+                            Professional installation helps ensure the pool table is assembled correctly, positioned properly and prepared for smooth, consistent play. Our team carries out the installation with attention to alignment, stability and the condition of the playing surface.
+                        </p>
+
+                        <div class="service-points">
+                            <div class="service-point">
+                                <span class="point-icon"><i class="fas fa-puzzle-piece"></i></span>
+                                <div>
+                                    <h4>Correct Assembly</h4>
+                                    <p>We assemble the major components of the pool table carefully according to the table structure and required installation method.</p>
+                                </div>
+                            </div>
+
+                            <div class="service-point">
+                                <span class="point-icon"><i class="fas fa-balance-scale"></i></span>
+                                <div>
+                                    <h4>Positioning &amp; Levelling</h4>
+                                    <p>The table is positioned and levelled as required so the playing surface is properly aligned for a better playing experience.</p>
+                                </div>
+                            </div>
+
+                            <div class="service-point">
+                                <span class="point-icon"><i class="fas fa-wrench"></i></span>
+                                <div>
+                                    <h4>Precision Setup</h4>
+                                    <p>We use appropriate tools and installation techniques to secure the table and make sure the components are correctly fitted.</p>
+                                </div>
+                            </div>
+
+                            <div class="service-point">
+                                <span class="point-icon"><i class="fas fa-check-circle"></i></span>
+                                <div>
+                                    <h4>Ready for Play</h4>
+                                    <p>After installation, the table is checked so it is stable, properly arranged and ready for use.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="highlight-note">
+                            <i class="fas fa-info-circle"></i>
+                            <div>
+                                <strong>Installation fee:</strong>
+                                An installation fee is charged separately based on the labour required to assemble, position, level and prepare the pool table for use.
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
                 <!-- Repair -->
-                <article class="service" data-aos="fade-up" data-aos-delay="300">
+                <article class="service service-expanded" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-badge"><i class="fas fa-tools"></i> Repair</div>
                     <h3>Repair</h3>
                     <img src="Image 6.png" alt="Pool Table Repair Service">
-                    <p>Expert repair services are available for any problem you may have with your pool table. When your pool table needs to be repaired, our skilled technicians are here to restore it to its original condition or to the condition you desire. We handle all types of repairs, including cloth change, cushion re-installation, slate leveling, table polishing, etc. We use high-quality materials and precision methods to ensure your table performs like new.</p>
+
+                    <div class="service-content">
+                        <p class="service-intro">
+                            We provide pool table repair services islandwide. Whether a playing component is damaged, worn out or no longer performing properly, we assess the requirement and recommend the necessary repair.
+                        </p>
+
+                        <div class="service-points">
+                            <div class="service-point">
+                                <span class="point-icon"><i class="fas fa-map-marked-alt"></i></span>
+                                <div>
+                                    <h4>Islandwide Repair Service</h4>
+                                    <p>Pool table repair services are available Islandwide.</p>
+                                </div>
+                            </div>
+
+                            <div class="service-point">
+                                <span class="point-icon"><i class="fas fa-file-invoice-dollar"></i></span>
+                                <div>
+                                    <h4>Repair Cost</h4>
+                                    <p>The repair cost depends on the customer's requirements and the work or materials needed for the repair.</p>
+                                </div>
+                            </div>
+
+                            <div class="service-point">
+                                <span class="point-icon"><i class="fas fa-cogs"></i></span>
+                                <div>
+                                    <h4>Accessory Replacement</h4>
+                                    <p>Some repairs may require a new accessory. In such cases, the relevant replacement accessory will need to be purchased before the repair can be completed.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="repair-process">
+                            <div class="process-title">
+                                <i class="fas fa-camera"></i>
+                                <span>How to request a repair</span>
+                            </div>
+                            <div class="repair-request-grid">
+                                <div class="request-card">
+                                    <span>01</span>
+                                    <h4>Take Photos</h4>
+                                    <p>Take a clear photo of the full pool table and the specific area that needs repair.</p>
+                                </div>
+                                <div class="request-card">
+                                    <span>02</span>
+                                    <h4>Send via WhatsApp</h4>
+                                    <p>Send the photos to understand the requirement.</p>
+                                </div>
+                                <div class="request-card">
+                                    <span>03</span>
+                                    <h4>Assess the Requirement</h4>
+                                    <p>We will review and discuss the required repair work or replacement items.</p>
+                                </div>
+                                <div class="request-card">
+                                    <span>04</span>
+                                    <h4>Arrange</h4>
+                                    <p>The service can be arranged according to the agreed work.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/94777607234" class="repair-contact-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            Send Repair Photos on WhatsApp
+                        </a>
+
+                        <p class="service-contact">
+                            <i class="fas fa-phone-alt"></i>
+                            For any further assistance, call <a href="tel:+94777607234">0777607234</a>.
+                        </p>
+                    </div>
                 </article>
             </div>
         </section>
@@ -354,7 +806,7 @@
     </main>
 
     <!-- Floating WhatsApp Interaction -->
-    <a href="https://wa.me/777607234" class="whatsapp-float" target="_blank" title="Chat with us">
+    <a href="https://wa.me/94777607234" class="whatsapp-float" target="_blank" title="Chat with us">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -380,7 +832,7 @@
                     </li>
                     <li style="display: flex; align-items: center; gap: 10px; margin-top: 15px;">
                         <img src="Whatsapp Icon.png" width="20" height="20">
-                        <a href="https://wa.me/777607234" target="_blank">+94777607234</a>
+                        <a href="https://wa.me/94777607234" target="_blank">+94777607234</a>
                     </li>
                 </ul>
             </div>
