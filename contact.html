@@ -127,53 +127,7 @@
             color: var(--primary-green);
             font-family: 'Playfair Display', serif;
         }
-
-        /* --- Contact Cards --- */
-        .contact-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin-bottom: 80px;
-        }
-
-        .card {
-            background: white;
-            padding: 40px 20px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: var(--transition);
-            border: 1px solid #f0f0f0;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow);
-            border-color: var(--accent-green);
-        }
-
-        .card img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            color: var(--primary-green);
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .card a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: block;
-        }
-
-        /* --- FAQ Section --- */
+/* --- FAQ Section --- */
         .faq-section {
             background-color: #f9f9f9;
             padding: 80px 5%;
@@ -373,17 +327,168 @@
             .trust-bar { flex-direction: column; gap: 15px; }
             .form-container { padding: 30px 20px; }
         }
+
+        /* --- Updated Contact Information Layout --- */
+        .contact-intro {
+            text-align: center;
+            max-width: 760px;
+            margin: -25px auto 42px;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .contact-info-wrap {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 28px;
+            margin-bottom: 80px;
+        }
+
+        .contact-panel {
+            background: white;
+            border: 1px solid #e9eee9;
+            border-radius: 24px;
+            padding: 34px;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+        }
+
+        .contact-panel h3 {
+            margin: 0 0 8px;
+            color: var(--primary-green);
+            font-size: 1.35rem;
+        }
+
+        .contact-panel > p {
+            margin-bottom: 24px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .direct-contact-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .direct-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 17px 18px;
+            border: 1px solid #edf1ed;
+            border-radius: 16px;
+            background: #fbfdfb;
+            transition: var(--transition);
+        }
+
+        .direct-contact-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(52,168,83,0.45);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .direct-contact-icon {
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: #f0f7f1;
+        }
+
+        .direct-contact-icon img {
+            width: 31px;
+            height: 31px;
+            object-fit: contain;
+        }
+
+        .direct-contact-content {
+            min-width: 0;
+        }
+
+        .direct-contact-content span {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #7a827b;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            margin-bottom: 3px;
+        }
+
+        .direct-contact-content a {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.97rem;
+            overflow-wrap: anywhere;
+        }
+
+        .direct-contact-content a:hover {
+            color: var(--primary-green);
+        }
+
+        .social-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            min-height: 58px;
+            padding: 12px 14px;
+            border: 1px solid #edf1ed;
+            border-radius: 14px;
+            background: #fbfdfb;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .social-link i {
+            width: 28px;
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--primary-green);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            color: var(--primary-green);
+            border-color: rgba(52,168,83,0.45);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 900px) {
+            .contact-info-wrap {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .contact-panel {
+                padding: 24px 18px;
+                border-radius: 20px;
+            }
+
+            .social-list {
+                grid-template-columns: 1fr;
+            }
+
+            .direct-contact-item {
+                padding: 15px;
+            }
+        }
+
     </style>
 </head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN8H0ZX5H4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EN8H0ZX5H4');
-</script>
 <body>
 
     <header>
@@ -409,29 +514,58 @@
                 <p class="intro-msg">We are here to assist with all your billiard needs.</p>
             </div>
 
-            <div class="contact-cards">
-                <div class="card" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="Gmail Icon.png" alt="Email">
-                    <h3>Email</h3>
-                    <a href="mailto:solidsandstripes.2005@hotmail.com">solidsandstripes.2005<br>@hotmail.com</a>
+            <div class="contact-info-wrap">
+                <div class="contact-panel" data-aos="fade-right">
+                    <h3>Direct Contact</h3>
+                    <p>Reach us directly for inquiries, orders, installations and repair services.</p>
+
+                    <div class="direct-contact-list">
+                        <div class="direct-contact-item">
+                            <div class="direct-contact-icon">
+                                <img src="Gmail Icon.png" alt="Email">
+                            </div>
+                            <div class="direct-contact-content">
+                                <span>Email</span>
+                                <a href="mailto:solidsandstripes.2005@hotmail.com">solidsandstripes.2005@hotmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="direct-contact-item">
+                            <div class="direct-contact-icon">
+                                <img src="Whatsapp Icon.png" alt="WhatsApp">
+                            </div>
+                            <div class="direct-contact-content">
+                                <span>Phone / WhatsApp</span>
+                                <a href="https://wa.me/777607234" target="_blank">0777607234</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="card" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="Whatsapp Icon.png" alt="WhatsApp">
-                    <h3>WhatsApp</h3>
-                    <a href="https://wa.me/777607234" target="_blank">0777607234</a>
-                </div>
+                <div class="contact-panel" data-aos="fade-left">
+                    <h3>Follow Us</h3>
+                    <p>See our latest products, projects, services and updates.</p>
 
-                <div class="card" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="Insta Icon.png" alt="Instagram">
-                    <h3>Instagram</h3>
-                    <a href="https://www.instagram.com/solid.and_stripes?igsh=ajFkN2luOTliaXF2" target="_blank">@solid.and_stripes</a>
-                </div>
-
-                <div class="card" data-aos="zoom-in" data-aos-delay="400">
-                    <img src="FB Icon.png" alt="Facebook">
-                    <h3>Facebook</h3>
-                    <a href="https://web.facebook.com/profile.php?id=61563499032144" target="_blank">Solids and Stripes</a>
+                    <div class="social-list">
+                        <a class="social-link" href="https://www.instagram.com/solid.and_stripes?igsh=ajFkN2luOTliaXF2" target="_blank">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a class="social-link" href="https://web.facebook.com/profile.php?id=61563499032144" target="_blank">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </a>
+                        <a class="social-link" href="https://www.youtube.com/channel/UCx1J0LvQCdvPQYxIuVmJCXQ" target="_blank">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </a>
+                        <a class="social-link" href="https://whatsapp.com/channel/0029Vb5ddkoEVccHGhIQAC1o" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Channel
+                        </a>
+                        <a class="social-link" href="https://t.me/gehs636" target="_blank">
+                            <i class="fab fa-telegram"></i> Telegram Channel
+                        </a>
+                        <a class="social-link" href="https://linkedin.com/company/solids-and-stripes-pool-table-services" target="_blank">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
                 </div>
             </div>
 
